@@ -1,0 +1,6 @@
+.*
+!.git*
+*.py[co]
+*~
+/config
+*env

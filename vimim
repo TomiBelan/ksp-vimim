@@ -3,6 +3,7 @@
 from __future__ import division
 
 import os
+import pygame
 import random
 
 if os.getenv('sdlttf'):
@@ -10,19 +11,39 @@ if os.getenv('sdlttf'):
 else:
     import draw_cairo as draw
 
+from editor import Editor
+from insert_mode import InsertMode
 
 
+class Vimim(object):
+    def __init__(self):
+        self.window = draw.Window()
+        self.window.start = self.start
+        self.window.draw = self.draw
+        self.window.react = self.react
+        self.window.draw_terminal = draw.draw_terminal
+        self.editor = Editor(self.window)
+        self.mode = InsertMode(self)
 
+    def run(self):
+        w = 800   # TODO
+        h = 600
+        self.window.run(w, h, 'vimim', bool(os.getenv('FULLSCREEN')))
 
-def draw_test(ctx):
-    colors = [0, 0.25, 0.5, 0.75, 1]
-    draw.draw_terminal(window, ctx,
-        [[chr(random.randint(32, 126)) for x in xrange(80)] for y in xrange(25)],
-#        [[(random.random(),random.random(),random.random()) for x in xrange(80)] for y in xrange(25)])
-        [[(random.choice(colors),random.choice(colors),random.choice(colors)) for x in xrange(80)] for y in xrange(25)])
+    def start(self):
+        pygame.key.set_repeat(500, 30)
+
+    def draw(self, ctx):
+        self.mode.draw(ctx)
+
+    def react(self, event):
+        if event.type == pygame.QUIT:
+            self.window.running = False
+            return
+        if event.type == pygame.KEYDOWN:
+            print repr(event.unicode)
+            self.mode.keydown(event)
+
 
 if __name__ == '__main__':
-    window = draw.Window()
-#    window.fps = 50
-    window.draw = draw_test
-    window.run(800, 600, 'vimim', fullscreen=bool(os.getenv('FULLSCREEN')))
+    Vimim().run()

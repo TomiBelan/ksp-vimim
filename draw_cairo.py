@@ -19,6 +19,9 @@ class Window(object):
     def react(self, event):
         pass
 
+    def start(self):
+        pass
+
     def run(self, w, h, caption=None, fullscreen=False):
         pygame.display.init()
         pygame.font.init()
@@ -49,6 +52,7 @@ class Window(object):
         self.begin = time.time()
         self.running = True
         self.clock = pygame.time.Clock()
+        self.start()
         while self.running:
             draw_internal()
             pygame.display.flip()

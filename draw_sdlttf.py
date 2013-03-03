@@ -51,29 +51,34 @@ class Window(object):
             self.clock.tick(self.fps)
 
 
-def draw_terminal(window, screen, chars, colors):
-    screen.fill((0, 0, 0))
+def draw_terminal(window, screensurf, screen):
+    screensurf.fill([int(255 * f) for f in screen.mainbg])
 
     if not hasattr(window, 'terminal_font'):
         window.terminal_font = pygame.font.SysFont('DejaVu Sans Mono', 14)
         window.glyph_cache = {}
     line_height = window.terminal_font.get_linesize()
 
-    for y, line in enumerate(chars):
-        if colors: cline = colors[y]
+    for y, line in enumerate(screen.chars):
+        fgline = screen.fg[y]
+        bgline = screen.bg[y]
         sx = 0
         for x, char in enumerate(line):
-            color = cline[x] if colors and cline else (1, 1, 1)
-            if (char, color) not in window.glyph_cache:
-#                print 'ow'
-                bcolor = [int(255 * f) for f in color]
-                window.glyph_cache[(char, color)] = window.terminal_font.render(char, True, bcolor)
-            screen.blit(window.glyph_cache[(char, color)], (sx, y * line_height))
-            sx += window.glyph_cache[(char, color)].get_size()[0]
+            fg = fgline[x] or (1, 1, 1)
+            bg = bgline[x]
+            cid = (char, fg, bg)
+            if cid not in window.glyph_cache:
+                fgb = [int(255 * f) for f in fg]
+                if bg:
+                    bgb = [int(255 * f) for f in bg]
+                    window.glyph_cache[cid] = window.terminal_font.render(char, True, fgb, bgb)
+                else:
+                    window.glyph_cache[cid] = window.terminal_font.render(char, True, fgb)
+            screensurf.blit(window.glyph_cache[cid], (sx, y * line_height))
+            sx += window.glyph_cache[cid].get_size()[0]
 
     fps = window.terminal_font.render('%.3ffps' % window.clock.get_fps(), True, (255, 255, 255))
-    screen.blit(fps, (0, window.h - fps.get_size()[1]))
-    print window.clock.get_fps()
+    screensurf.blit(fps, (0, window.h - fps.get_size()[1]))
 
 
 def draw_test(ctx):

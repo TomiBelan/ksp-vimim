@@ -6,35 +6,38 @@ Co s editorom:
 Co zostava vymysliet:
 - ulohy
 
+Nahodne TODO:
+- cursor blink?
+
 
 
 Command mode:
-q: zhasne obrazovku na polminutu
-w: reverzni riadok
-e: sipka hore
-r: repeat posledneho aktivneho cmdline keypressu
-t: sort riadkov
-y: LOTERIA MODE
-u: UNDO MODE
-i: INSERT MODE
-o: OPERAVUJEM MODE
-p: POMOC (ZAKLADNY HELP)
-a: sipka vlavo
-s: SUBMITUJ
-d: dole (uplny spodok suboru)
-f: sipka vpravo
-g: GAME MODE
-h: hore (uplny vrch suboru)
-j: jump na najblizsi znak urceny next keypressom (euklidovsky)
-k: koniec riadku (end)
-l: lowercase riadok
-z: ZADANIE ULOHY
-x: sipka dole
-c: swapcase riadok
-v: VYPINAM FEATURY (+ ZADAVANIE KREDITOV)
-b: random indent
-n: niekde (nahodna pozicia kurzora na obrazovke)
-m: MAZEM (DELETE MODE TOGGLE)
+---r q: zhasne obrazovku na polminutu
+-l-- w: reverzni riadok
+--p- e: sipka hore
+---k r: repeat posledneho aktivneho cmdline keypressu
+-S-- t: sort riadkov
+m--- y: LOTERIA MODE
+m--- u: UNDO MODE
+m--- i: INSERT MODE
+m--- o: OPRAVUJEM MODE
+M--- p: POMOC (ZAKLADNY HELP)
+--p- a: sipka vlavo
+M--- s: SUBMITUJ
+--p- d: dole (uplny spodok suboru)
+--p- f: sipka vpravo
+M--- g: GAME MODE
+--p- h: hore (uplny vrch suboru)
+m-pk j: jump na najblizsi znak urceny next keypressom (euklidovsky)
+--p- k: koniec riadku (end)
+-l-- l: lowercase riadok
+M--- z: ZADANIE ULOHY
+--p- x: sipka dole
+-l-- c: swapcase riadok
+M--- v: VYPINAM FEATURY (+ ZADAVANIE KREDITOV)
+-l-- b: random indent
+--p- n: niekde (nahodna pozicia kurzora na obrazovke)
+m--- m: MAZEM (DELETE MODE TOGGLE)
 
 Loteria mode: "y" stopuje, zvysok nic nerobi (beep?)
 
@@ -50,6 +53,7 @@ Undo mode:
 - zvysok nerobi nic (beep?)
 
 Delete mode:
+e: enter (predosly)
 r: riadok
 o: okolo
 p: pismena

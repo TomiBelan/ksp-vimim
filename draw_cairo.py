@@ -65,7 +65,7 @@ class Window(object):
             self.clock.tick(self.fps)
 
 
-def draw_terminal(window, ctx, chars, colors):
+def draw_terminal(window, ctx, screen):
     ctx.select_font_face('monospace')
     ctx.set_font_size(15)
     ascent, descent, font_height, max_x_advance, max_y_advance = ctx.font_extents()
@@ -74,13 +74,23 @@ def draw_terminal(window, ctx, chars, colors):
     ctx.set_source_rgb(1, 1, 1)
     ctx.translate(0, -descent)
 #    ctx.rotate(0.5*(2*math.pi)/360)
-    for y, line in enumerate(chars):
-        if colors: cline = colors[y]
+    for y, line in enumerate(screen.chars):
+        fgline = screen.fg[y]
+        bgline = screen.bg[y]
         ctx.translate(0, font_height)
-        ctx.new_path()   # update the current point for show_text
+        #ctx.set_line_width(1); ctx.move_to(0,0.5); ctx.line_to(800, 0.5); ctx.stroke()
+        ctx.move_to(0, 0)   # set the current point for show_text and rel_line_to
         ctx.save()
         for x, char in enumerate(line):
-            if colors and cline: ctx.set_source_rgb(*cline[x])
+            if bgline[x]:
+                ctx.set_source_rgb(*bgline[x])
+                x_advance = ctx.text_extents(char)[4]
+                ctx.rel_line_to(0, descent)
+                ctx.rel_line_to(x_advance, 0)
+                ctx.rel_line_to(0, -font_height)
+                ctx.rel_line_to(-x_advance, 0)
+                ctx.fill()
+            ctx.set_source_rgb(*(fgline[x] or (1, 1, 1)))
             ctx.show_text(char)
         ctx.restore()
     ctx.restore()

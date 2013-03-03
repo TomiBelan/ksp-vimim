@@ -1,22 +1,37 @@
 
+from screen import Screen
+
 class Editor(object):
-    def __init__(self, window):
-        self.window = window
+    def __init__(self, vimim):
+        self.vimim = vimim
         self.x = 0
         self.y = 0
         self.scroll = 0
         self.content = []
-        self.height = 25   # TODO status bar
+        self.mode = self.insert_mode
+
+    @property
+    def height(self):
+        return 25   # TODO status bar
 
     def draw(self, ctx):
-        chars = self.content[self.scroll:self.scroll+self.height]
-        empty_line = [u' ' * 80]
-        while len(chars) < 25: chars.append(empty_line)
-        colors = None
-        self.window.draw_terminal(self.window, ctx, chars, colors)
+        screen = Screen()
+        for y, line in enumerate(self.content[self.scroll:self.scroll+self.height]):
+            screen.write(0, y, line[0:80])
+        if (0 <= self.y - self.scroll < self.height) and (0 <= self.x < 80):
+            screen.bg[self.y - self.scroll][self.x] = screen.fg[self.y - self.scroll][self.x]
+            screen.fg[self.y - self.scroll][self.x] = screen.mainbg
+        # TODO status bar
+        self.vimim.window.draw_terminal(self.vimim.window, ctx, screen)
+
+    def keydown(self, event):
+        self.mode(event)
+
+
+    # ZAKLADNE UPRAVY
 
     def move_to(self, nx, ny):
-        self.x = max(0, min(79, nx))
+        self.x = max(0, nx)
         self.y = max(0, ny)
         if self.y < self.scroll:
             self.scroll = self.y
@@ -26,21 +41,44 @@ class Editor(object):
     def move_by(self, dx, dy):
         self.move_to(self.x + dx, self.y + dy)
 
-    def write(self, ch):
-        content = self.content
-        while len(content) <= self.y:
-            content.append([u' '] * 80)
+    def normalize(self, y, x):
+        while len(self.content) <= y: self.content.append(u'')
+        self.content[y] = self.content[y].ljust(x)
 
-        change = content[self.y][:]
-        change.insert(self.x, ch)
-        change = ''.join(new_line).split('\n')
-        change = [line.rstrip(' ').ljust(80) for line in change]
-        if any(len(line) > 80 for line in change): return
-        content.pop(self.y)
-        for i, line in enumerate(change):
-            content.insert(self.y + i, list(line))
-        if u'\n' in ch:
-            self.move_to(len(ch.rpartition(u'\n')[2]), self.y + len(change) - 1)
-        else:
-            self.move_by(len(ch), 0)
-        # TODO ale hento neskoci na novy riadok ked je tento plny
+    def splice(self, y, xfrom, xto, replace=u''):
+        self.normalize(y, xto)
+        line = self.content[y]
+        line = line[:xfrom] + replace + line[xto:]
+        self.content[y] = line
+        if y != self.y: return
+        if xto - xfrom == len(replace): return
+        if xfrom < self.x or (xfrom == self.x and xto <= self.x):
+            self.move_by(len(replace) - (xto - xfrom), 0)
+
+    def newline(self, y=None, x=None):
+        if y is None: y = self.y
+        if x is None: x = self.x
+        self.normalize(y, x)
+        line = self.content[y]
+        self.content.insert(y + 1, line[x:])
+        self.content[y] = line[:x]
+        if self.y < y or (self.y == y and self.x < x): return
+        if self.y > y:
+            self.move_by(0, 1)
+        elif self.y == y and self.x >= x:
+            self.move_by(-x, 1)
+
+
+    # MODY
+
+    def insert_mode(self, event):
+        if not event: return
+        if event.unicode == u'\n' or event.unicode == u'\r':
+            self.newline()
+        elif event.unicode and ord(event.unicode) >= 32:
+            self.splice(self.y, self.x, self.x, event.unicode)
+        elif event.unicode == u'\t':
+            self.splice(self.y, self.x, self.x, u' ')
+
+    insert_mode.name = u'INSERT MODE'
+

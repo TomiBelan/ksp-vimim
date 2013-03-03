@@ -41,7 +41,6 @@ class Vimim(object):
             self.window.running = False
             return
         if event.type == pygame.KEYDOWN:
-            print repr(event.unicode)
             self.mode.keydown(event)
 
 

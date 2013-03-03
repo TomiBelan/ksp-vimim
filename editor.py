@@ -10,7 +10,7 @@ class Editor(object):
 
     def draw(self, ctx):
         chars = self.content[self.scroll:self.scroll+self.height]
-        empty_line = [' ' * 80]
+        empty_line = [u' ' * 80]
         while len(chars) < 25: chars.append(empty_line)
         colors = None
         self.window.draw_terminal(self.window, ctx, chars, colors)
@@ -27,28 +27,20 @@ class Editor(object):
         self.move_to(self.x + dx, self.y + dy)
 
     def write(self, ch):
-        if len(ch) > 1:
-            for c in ch: self.write(c)
-            return
-
         content = self.content
         while len(content) <= self.y:
             content.append([u' '] * 80)
 
-        if ch == u'\n':
-            new_line = content[self.y][self.x:]
-            content[self.y] = content[self.y][0:self.x]
-            while len(content[self.y]) < 80: content[self.y].append(u' ')
-            while len(new_line) < 80: new_line.append(u' ')
-            content.insert(self.y + 1, new_line)
-            self.move_to(0, self.y + 1)
-            return
-
-        if content[self.y][-1] != u' ': return
-        content[self.y].pop()
-        content[self.y].insert(self.x, ch)
-
-        if self.x == 79:
-            self.move_to(0, self.y + 1)
+        change = content[self.y][:]
+        change.insert(self.x, ch)
+        change = ''.join(new_line).split('\n')
+        change = [line.rstrip(' ').ljust(80) for line in change]
+        if any(len(line) > 80 for line in change): return
+        content.pop(self.y)
+        for i, line in enumerate(change):
+            content.insert(self.y + i, list(line))
+        if u'\n' in ch:
+            self.move_to(len(ch.rpartition(u'\n')[2]), self.y + len(change) - 1)
         else:
-            self.move_by(1, 0)
+            self.move_by(len(ch), 0)
+        # TODO ale hento neskoci na novy riadok ked je tento plny

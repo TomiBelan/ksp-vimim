@@ -54,6 +54,14 @@ class Editor(object):
         while len(self.content) <= y: self.content.append(u'')
         self.content[y] = self.content[y].ljust(x)
 
+    def normalize_line(self):
+        self.normalize(self.y, self.x)
+        line = self.content[self.y]
+        short_line = line.rstrip()
+        if short_line != line:
+            self.splice(self.y, len(short_line), len(line))
+        return self.content[self.y]
+
     def splice(self, y, xfrom, xto, replace=u''):
         self.normalize(y, xto)
         line = self.content[y]
@@ -61,7 +69,9 @@ class Editor(object):
         self.content[y] = line
         if y != self.y: return
         if xto - xfrom == len(replace): return
-        if xfrom < self.x or (xfrom == self.x and xto <= self.x):
+        if xfrom <= self.x < xto:
+            self.move_to(xfrom + len(replace), self.y)
+        elif (xfrom == xto and self.x == xfrom) or self.x >= xto:
             self.move_by(len(replace) - (xto - xfrom), 0)
 
     def newline(self, y=None, x=None):
@@ -94,6 +104,10 @@ class Editor(object):
             key = self.last_command
             if key is None: return
 
+        if key == pygame.K_w:
+            self.last_command = key
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line), line[::-1])
         if key == pygame.K_e:
             self.move_by(0, -1)
         if key == pygame.K_i:
@@ -104,14 +118,31 @@ class Editor(object):
             self.mode = self.overwrite_mode
         if key == pygame.K_a:
             self.move_by(-1, 0)
+        if key == pygame.K_d:
+            while self.content and not self.content[-1].rstrip(): self.content.pop()
+            if self.content:
+                self.content[-1] = self.content[-1].rstrip()
+                self.move_to(len(self.content[-1]), len(self.content)-1)
         if key == pygame.K_f:
             self.move_by(1, 0)
         if key == pygame.K_h:
             self.move_to(0, 0)
         if key == pygame.K_k:
             self.move_to(len(self.content[self.y].rstrip()), self.y)
+        if key == pygame.K_l:
+            self.last_command = key
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line), line.lower())
         if key == pygame.K_x:
             self.move_by(0, 1)
+        if key == pygame.K_c:
+            self.last_command = key
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line), line.swapcase())
+        if key == pygame.K_b:
+            self.last_command = key
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line) - len(line.lstrip()), u' ' * random.randint(0, 8))
         if key == pygame.K_n:
             self.move_to(random.randint(0, 79),
                          random.randint(self.scroll, self.scroll + self.height - 1))

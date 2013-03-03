@@ -1,4 +1,6 @@
 
+import pygame
+import random
 from screen import Screen
 
 class Editor(object):
@@ -8,7 +10,7 @@ class Editor(object):
         self.y = 0
         self.scroll = 0
         self.content = []
-        self.mode = self.insert_mode
+        self.mode = self.command_mode
 
     @property
     def height(self):
@@ -26,6 +28,9 @@ class Editor(object):
 
     def keydown(self, event):
         self.mode(event)
+
+    def bell(self):
+        pass   # TODO
 
 
     # ZAKLADNE UPRAVY
@@ -71,14 +76,48 @@ class Editor(object):
 
     # MODY
 
+    def command_mode(self, event):
+        if not event: return
+        if event.mod & (pygame.KMOD_CTRL | pygame.KMOD_ALT):
+            self.bell()
+            return
+        if not (pygame.K_a <= event.key <= pygame.K_z):
+            self.bell()
+            return
+        # TODO pay
+        if event.key == pygame.K_e:
+            self.move_by(0, -1)
+        if event.key == pygame.K_i:
+            self.mode = self.insert_mode
+        if event.key == pygame.K_a:
+            self.move_by(-1, 0)
+        if event.key == pygame.K_f:
+            self.move_by(1, 0)
+        if event.key == pygame.K_h:
+            self.move_to(0, 0)
+        if event.key == pygame.K_k:
+            self.move_to(len(self.content[self.y].rstrip()), self.y)
+        if event.key == pygame.K_x:
+            self.move_by(0, 1)
+        if event.key == pygame.K_n:
+            self.move_to(random.randint(0, 79),
+                         random.randint(self.scroll, self.scroll + self.height - 1))
+
+    command_mode.name = u''
+
+
     def insert_mode(self, event):
         if not event: return
-        if event.unicode == u'\n':
+        elif event.unicode.lower() == u'i':
+            self.mode = self.command_mode
+        elif event.unicode == u'\n':
             self.newline()
         elif event.unicode == u'\t':
             self.splice(self.y, self.x, self.x, u' ')
         elif event.unicode and ord(event.unicode[0]) >= 32:
             self.splice(self.y, self.x, self.x, event.unicode)
+        else:
+            self.bell()
 
-    insert_mode.name = u'INSERT MODE'
+    insert_mode.name = u'-- INSERT MODE --'
 

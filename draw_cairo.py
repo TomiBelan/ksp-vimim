@@ -83,6 +83,7 @@ def draw_terminal(window, ctx, screen):
         ctx.save()
         for x, char in enumerate(line):
             if bgline[x]:
+                xx, yy = ctx.get_current_point()
                 ctx.set_source_rgb(*bgline[x])
                 x_advance = ctx.text_extents(char)[4]
                 ctx.rel_line_to(0, descent)
@@ -90,6 +91,7 @@ def draw_terminal(window, ctx, screen):
                 ctx.rel_line_to(0, -font_height)
                 ctx.rel_line_to(-x_advance, 0)
                 ctx.fill()
+                ctx.move_to(xx, yy)
             ctx.set_source_rgb(*(fgline[x] or (1, 1, 1)))
             ctx.show_text(char)
         ctx.restore()

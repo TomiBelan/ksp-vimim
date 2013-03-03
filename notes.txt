@@ -8,6 +8,9 @@ Co zostava vymysliet:
 
 Nahodne TODO:
 - cursor blink?
+- **kredity**
+- **features**
+- **minihra**
 
 
 

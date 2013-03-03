@@ -73,12 +73,12 @@ class Editor(object):
 
     def insert_mode(self, event):
         if not event: return
-        if event.unicode == u'\n' or event.unicode == u'\r':
+        if event.unicode == u'\n':
             self.newline()
-        elif event.unicode and ord(event.unicode) >= 32:
-            self.splice(self.y, self.x, self.x, event.unicode)
         elif event.unicode == u'\t':
             self.splice(self.y, self.x, self.x, u' ')
+        elif event.unicode and ord(event.unicode[0]) >= 32:
+            self.splice(self.y, self.x, self.x, event.unicode)
 
     insert_mode.name = u'INSERT MODE'
 

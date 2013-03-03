@@ -39,7 +39,34 @@ class Vimim(object):
         if event.type == pygame.QUIT:
             self.window.running = False
         if event.type == pygame.KEYDOWN:
-            self.mode.keydown(event)
+            #print (event.unicode, event.key, event.mod)
+            self.mode.keydown(self.normalize_key(event))
+
+    _keys_table = {
+        pygame.K_LEFT:      u'\u2190',
+        pygame.K_UP:        u'\u2191',
+        pygame.K_RIGHT:     u'\u2192',
+        pygame.K_DOWN:      u'\u2193',
+        pygame.K_HOME:      u'\u25C0',
+        pygame.K_END:       u'\u25B6',
+        pygame.K_PAGEUP:    u'\u25B2',
+        pygame.K_PAGEDOWN:  u'\u25BC',
+        pygame.K_BACKSPACE: u'\u2665',
+        pygame.K_DELETE:    u'\u2717',
+    }
+    def normalize_key(self, event):
+        if event.key in self._keys_table:
+            code = self._keys_table[event.key]
+        elif event.unicode == u'\x1f':
+            code = self._keys_table[pygame.K_DELETE]
+        elif event.unicode == u'\r':
+            code = u'\n'
+        elif pygame.K_F1 <= event.key <= pygame.K_F12:
+            code = u'<F%d>' % (event.key - pygame.K_F1 + 1)
+        else:
+            code = event.unicode
+        return pygame.event.Event(pygame.KEYDOWN,
+            unicode=code, key=event.key, mod=event.mod)
 
 
 if __name__ == '__main__':

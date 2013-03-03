@@ -1,0 +1,85 @@
+
+Co s editorom:
+- riadky mozu byt neobmedzene dlhe, zvysok sa proste nezobrazi
+- kurzor moze ist neobmedzene doprava i guess?
+
+Co zostava vymysliet:
+- ulohy
+
+
+
+Command mode:
+q: zhasne obrazovku na polminutu
+w: reverzni riadok
+e: sipka hore
+r: repeat posledneho aktivneho cmdline keypressu
+t: sort riadkov
+y: LOTERIA MODE
+u: UNDO MODE
+i: INSERT MODE
+o: OPERAVUJEM MODE
+p: POMOC (ZAKLADNY HELP)
+a: sipka vlavo
+s: SUBMITUJ
+d: dole (uplny spodok suboru)
+f: sipka vpravo
+g: GAME MODE
+h: hore (uplny vrch suboru)
+j: jump na najblizsi znak urceny next keypressom (euklidovsky)
+k: koniec riadku (end)
+l: lowercase riadok
+z: ZADANIE ULOHY
+x: sipka dole
+c: swapcase riadok
+v: VYPINAM FEATURY (+ ZADAVANIE KREDITOV)
+b: random indent
+n: niekde (nahodna pozicia kurzora na obrazovke)
+m: MAZEM (DELETE MODE TOGGLE)
+
+Loteria mode: "y" stopuje, zvysok nic nerobi (beep?)
+
+Insert mode:
+- "i" toggluje
+- zvysok insertuje (vratane sipiek atd)
+
+Opravujem mode: "o" toggluje, zvysok prepisuje momentalnu poziciu a nehybe sa
+
+Undo mode:
+- hrozne rychlo sa undouje
+- "u" toggluje
+- zvysok nerobi nic (beep?)
+
+Delete mode:
+r: riadok
+o: okolo
+p: pismena
+s: slovo
+v: vsetko
+b: bang (medzerovity vybuch okolo kurzora)
+z: zatvorky
+c: cisla
+n: nahodne
+m: toggluje
+zvysok: nic (beep?)
+
+
+
+Features:
++ highlightovanie
++ hide status bar (more screen estate)
+- high contrast color scheme
++ accessibility (vsetko velkym pismom)
+- sachovy kon
+- kurzor chodi zhora dole
+- 180 stupnov
+- kazdy znak sa napise 2x (zdvojnasobi vasu efektivitu)
++ schovat compiler status (rage lessener)
++ hrozne sproste matchovanie zatvoriek (PSPad level)
+- spellchecking (for->fór, main->mamin, until->nútil, while->Chile)
+- center align [hmm mozno prilis komplikovane]
+- schovat kurzor
+- rot13
+- IDE - compiler vysledky priamo v texte
+
+ak budu mat vela kreditov, spravime za keystroky v game mode timesink.
+(alebo za dynamit!)

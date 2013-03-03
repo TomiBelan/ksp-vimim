@@ -11,6 +11,7 @@ class Editor(object):
         self.scroll = 0
         self.content = []
         self.mode = self.command_mode
+        self.last_command = None
 
     @property
     def height(self):
@@ -85,21 +86,27 @@ class Editor(object):
             self.bell()
             return
         # TODO pay
-        if event.key == pygame.K_e:
+        key = event.key
+        if key == pygame.K_r:
+            key = self.last_command
+            if key is None: return
+
+        if key == pygame.K_e:
             self.move_by(0, -1)
-        if event.key == pygame.K_i:
+        if key == pygame.K_i:
+            self.last_command = key
             self.mode = self.insert_mode
-        if event.key == pygame.K_a:
+        if key == pygame.K_a:
             self.move_by(-1, 0)
-        if event.key == pygame.K_f:
+        if key == pygame.K_f:
             self.move_by(1, 0)
-        if event.key == pygame.K_h:
+        if key == pygame.K_h:
             self.move_to(0, 0)
-        if event.key == pygame.K_k:
+        if key == pygame.K_k:
             self.move_to(len(self.content[self.y].rstrip()), self.y)
-        if event.key == pygame.K_x:
+        if key == pygame.K_x:
             self.move_by(0, 1)
-        if event.key == pygame.K_n:
+        if key == pygame.K_n:
             self.move_to(random.randint(0, 79),
                          random.randint(self.scroll, self.scroll + self.height - 1))
 

@@ -33,6 +33,9 @@ class Editor(object):
     def bell(self):
         pass   # TODO
 
+    def pay(self):
+        return self.vimim.pay(3)
+
 
     # ZAKLADNE UPRAVY
 
@@ -85,7 +88,7 @@ class Editor(object):
         if not (pygame.K_a <= event.key <= pygame.K_z):
             self.bell()
             return
-        # TODO pay
+        if not self.pay(): return
         key = event.key
         if key == pygame.K_r:
             key = self.last_command
@@ -115,13 +118,18 @@ class Editor(object):
 
     def insert_mode(self, event):
         if not event: return
-        elif event.unicode.lower() == u'i':
+
+        if event.unicode.lower() == u'i':
+            # free
             self.mode = self.command_mode
         elif event.unicode == u'\n':
+            if not self.pay(): return
             self.newline()
         elif event.unicode == u'\t':
+            if not self.pay(): return
             self.splice(self.y, self.x, self.x, u' ')
         elif event.unicode and ord(event.unicode[0]) >= 32:
+            if not self.pay(): return
             self.splice(self.y, self.x, self.x, event.unicode)
         else:
             self.bell()

@@ -42,6 +42,9 @@ class Vimim(object):
             #print (event.unicode, event.key, event.mod)
             self.mode.keydown(self.normalize_key(event))
 
+    def pay(self, price):
+        return True   # TODO
+
     _keys_table = {
         pygame.K_LEFT:      u'\u2190',
         pygame.K_UP:        u'\u2191',

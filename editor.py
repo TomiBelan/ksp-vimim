@@ -99,6 +99,9 @@ class Editor(object):
         if key == pygame.K_i:
             self.last_command = key
             self.mode = self.insert_mode
+        if key == pygame.K_o:
+            self.last_command = key
+            self.mode = self.overwrite_mode
         if key == pygame.K_a:
             self.move_by(-1, 0)
         if key == pygame.K_f:
@@ -136,3 +139,17 @@ class Editor(object):
 
     insert_mode.name = u'-- INSERT MODE --'
 
+
+    def overwrite_mode(self, event):
+        if not event: return
+
+        if event.unicode.lower() == u'o':
+            # free
+            self.mode = self.command_mode
+        elif len(event.unicode) == 1 and event.unicode != u'\n' and ord(event.unicode) >= 32:
+            if not self.pay(): return
+            self.splice(self.y, self.x, self.x + 1, event.unicode)
+        else:
+            self.bell()
+
+    overwrite_mode.name = u'-- OPRAVUJEM MODE --'

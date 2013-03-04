@@ -13,7 +13,7 @@ class Help(object):
             screen.write(0, y, line[0:80])
         if self.vimim.have_status_bar:
             self.vimim.draw_generic_status_bar(screen)
-        self.vimim.postprocess_screen(screen)   # TODO isto?
+        self.vimim.postprocess_screen(screen)
         self.vimim.window.draw_terminal(self.vimim.window, ctx, screen)
 
     def keydown(self, event):

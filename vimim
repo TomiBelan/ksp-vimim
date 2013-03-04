@@ -91,6 +91,7 @@ class Vimim(object):
         return True   # TODO
 
     def draw_generic_status_bar(self, screen):
+        screen.recolor(0, 80, 24, (1, 1, 1), None)
         pass   # TODO kredity
 
     def postprocess_screen(self, screen):

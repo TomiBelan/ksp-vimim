@@ -36,10 +36,10 @@ help_text = u'''
 
     Základné príkazy:
 
+    C = Config fičúrií a zadávanie kupónov
     G = Game mode
     P = Pomocník zap/vyp
     S = Submitúúúj
-    V = Vypínať fičúrie a používať kupóny
     U = Undo mode
 
 

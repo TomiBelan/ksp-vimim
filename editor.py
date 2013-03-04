@@ -202,7 +202,7 @@ class Editor(object):
             self.splice(self.y, 0, len(line), line.lower())
         if key == pygame.K_x:
             self.move_by(0, 1)
-        if key == pygame.K_c:
+        if key == pygame.K_v:
             self.last_command = key
             self.remember()
             line = self.normalize_line()

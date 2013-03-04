@@ -36,8 +36,8 @@ m-pk j: jump na najblizsi znak urceny next keypressom (euklidovsky)
 -l-- l: lowercase riadok
 M--- z: ZADANIE ULOHY
 --p- x: sipka dole
--l-- c: swapcase riadok
-M--- v: VYPINAM FEATURY (+ ZADAVANIE KREDITOV)
+M--- c: CONFIGURATION (FEATURY A KREDITY)
+-l-- v: vymen case riadku
 -l-- b: random indent
 --p- n: niekde (nahodna pozicia kurzora na obrazovke)
 m--- m: MAZEM (DELETE MODE TOGGLE)

@@ -129,6 +129,18 @@ class Editor(object):
             self.splice(self.y, 0, len(line), line[::-1])
         if key == pygame.K_e:
             self.move_by(0, -1)
+        if key == pygame.K_t:
+            self.last_command = key
+            my_x = self.x
+            my_line = self.normalize_line()
+            while self.content and not self.content[-1].rstrip(): self.content.pop()
+            self.content = sorted(line.rstrip() for line in self.content)
+            self.content.sort()
+            try:
+                my_y = self.content.index(my_line)
+            except ValueError:
+                my_y = 0
+            self.move_to(my_x, my_y)
         if key == pygame.K_i:
             self.last_command = key
             self.mode = self.insert_mode
@@ -139,9 +151,7 @@ class Editor(object):
             self.move_by(-1, 0)
         if key == pygame.K_d:
             while self.content and not self.content[-1].rstrip(): self.content.pop()
-            if self.content:
-                self.content[-1] = self.content[-1].rstrip()
-                self.move_to(len(self.content[-1]), len(self.content)-1)
+            self.move_to(0, len(self.content))
         if key == pygame.K_f:
             self.move_by(1, 0)
         if key == pygame.K_h:

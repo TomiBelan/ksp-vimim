@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import time
 import pygame
 import random
 from screen import Screen
@@ -126,6 +127,9 @@ class Editor(object):
             key = self.last_command
             if key is None: return
 
+        if key == pygame.K_q:
+            self.last_command = key
+            self.vimim.darkness = time.time() + 30
         if key == pygame.K_w:
             self.last_command = key
             line = self.normalize_line()

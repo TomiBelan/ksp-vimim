@@ -36,6 +36,9 @@ class Editor(object):
     def keydown(self, event):
         self.mode(event)
 
+    def idle(self):
+        self.mode(None)
+
     def bell(self):
         self.vimim.bell()
 
@@ -148,6 +151,9 @@ class Editor(object):
             except ValueError:
                 my_y = 0
             self.move_to(my_x, my_y)
+        if key == pygame.K_y:
+            self.last_command = key
+            self.mode = self.lottery_mode
         if key == pygame.K_i:
             self.last_command = key
             self.mode = self.insert_mode
@@ -277,6 +283,19 @@ class Editor(object):
             self.bell()
 
     overwrite_mode.name = u'-- OPRAVUJEM MODE --'
+
+
+    def lottery_mode(self, event):
+        if not event:
+            self.splice(self.y, self.x, self.x + 1, unichr(random.randint(32, 126)))
+            return
+
+        if event.mod & (pygame.KMOD_CTRL | pygame.KMOD_ALT):
+            self.bell()
+            return
+        self.mode = self.command_mode
+
+    lottery_mode.name = u'-- LOTTERY MODE --'
 
 
     def jump_mode(self, event):

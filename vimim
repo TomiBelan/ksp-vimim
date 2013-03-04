@@ -24,6 +24,7 @@ class Vimim(object):
         self.window.react = self.react
         self.window.draw_terminal = draw.draw_terminal
 
+        self.last_idle = 0
         self.darkness = 0
 
         self.editor_app = Editor(self)
@@ -40,6 +41,11 @@ class Vimim(object):
 
     def draw(self, ctx):
         self.app.draw(ctx)
+
+        now = time.time()
+        if now > self.last_idle + 1.0/20:
+            self.last_idle = now
+            self.app.idle()
 
     def react(self, event):
         if event.type == pygame.QUIT:

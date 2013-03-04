@@ -25,6 +25,9 @@ class Help(object):
         else:
             self.vimim.bell()
 
+    def idle(self):
+        pass
+
 
 help_text = u'''
 

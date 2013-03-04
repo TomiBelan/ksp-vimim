@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 
+import re
 import pygame
 import random
 from screen import Screen
@@ -52,15 +54,13 @@ class Editor(object):
 
     def normalize(self, y, x):
         while len(self.content) <= y: self.content.append(u'')
-        self.content[y] = self.content[y].ljust(x)
+        self.content[y] = self.content[y].rstrip().ljust(x)
 
     def normalize_line(self):
-        self.normalize(self.y, self.x)
+        self.normalize(self.y, 0)
         line = self.content[self.y]
-        short_line = line.rstrip()
-        if short_line != line:
-            self.splice(self.y, len(short_line), len(line))
-        return self.content[self.y]
+        if self.x > len(line): self.move_to(len(line), self.y)
+        return line
 
     def splice(self, y, xfrom, xto, replace=u''):
         self.normalize(y, xto)
@@ -86,6 +86,25 @@ class Editor(object):
             self.move_by(0, 1)
         elif self.y == y and self.x >= x:
             self.move_by(-x, 1)
+
+    def merge_line(self, y=None):
+        if y is None: y = self.y
+        if y == 0: return
+        self.normalize(y-1, 0)
+        self.normalize(y, 0)
+        upper_line = self.content[y-1]
+        self.content[y-1] += self.content[y]
+        self.content.pop(y)
+        if self.y == y:
+            self.move_by(len(upper_line), -1)
+        elif self.y > y:
+            self.move_by(0, -1)
+
+    def blank_char(self, y, x):
+        if y < 0 or x < 0: return
+        self.normalize(y, 0)
+        if self.content[y][x:x+1] not in (u'', u' '):
+            self.splice(y, x, x+1, u' ')
 
 
     # MODY
@@ -128,6 +147,7 @@ class Editor(object):
         if key == pygame.K_h:
             self.move_to(0, 0)
         if key == pygame.K_k:
+            self.normalize_line()
             self.move_to(len(self.content[self.y].rstrip()), self.y)
         if key == pygame.K_l:
             self.last_command = key
@@ -146,8 +166,59 @@ class Editor(object):
         if key == pygame.K_n:
             self.move_to(random.randint(0, 79),
                          random.randint(self.scroll, self.scroll + self.height - 1))
+        if key == pygame.K_m:
+            self.last_command = key
+            self.mode = self.delete_mode
 
     command_mode.name = u''
+
+
+    def delete_mode(self, event):
+        if not event: return
+        if event.mod & (pygame.KMOD_CTRL | pygame.KMOD_ALT):
+            self.bell()
+            return
+        if event.key not in [ord(c) for c in 'eropsvbzcnm']:
+            self.bell()
+            return
+        if not self.pay(): return
+        key = event.key
+
+        if key == pygame.K_e:
+            self.merge_line()
+        if key == pygame.K_r:
+            self.normalize(self.y, 0)
+            self.content.pop(self.y)
+            self.move_to(0, self.y)
+        if key == pygame.K_o:
+            for (dx,dy) in ((-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)):
+                self.blank_char(self.y + dy, self.x + dx)
+        if key == pygame.K_p:
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line), re.sub(ur'[A-Za-z]', u'', line).rstrip())
+        if key == pygame.K_s:
+            self.normalize_line()
+            prefix = self.content[self.y][0:self.x]
+            self.splice(self.y, 0, len(prefix), re.sub(ur'(\w+|\W+)$', u'', prefix))
+        if key == pygame.K_v:
+            self.content = []
+            self.move_to(0, 0)
+        if key == pygame.K_b:
+            pass # TODO
+        if key == pygame.K_z:
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line), re.sub(ur'[\(\)\[\]{}]', u'', line).rstrip())
+        if key == pygame.K_c:
+            line = self.normalize_line()
+            self.splice(self.y, 0, len(line), re.sub(ur'[0-9]', u'', line).rstrip())
+        if key == pygame.K_n:
+            self.normalize_line()
+            prefix = self.content[self.y][0:self.x]
+            self.splice(self.y, 0, len(prefix), prefix[0:random.randint(0, len(prefix))])
+        if key == pygame.K_m:
+            self.mode = self.command_mode
+
+    delete_mode.name = u'-- MAŽEM MODE --'
 
 
     def insert_mode(self, event):

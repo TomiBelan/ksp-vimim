@@ -60,7 +60,7 @@ e: enter (predosly)
 r: riadok
 o: okolo
 p: pismena
-s: slovo
+s: slovo/symboly
 v: vsetko
 b: bang (medzerovity vybuch okolo kurzora)
 z: zatvorky

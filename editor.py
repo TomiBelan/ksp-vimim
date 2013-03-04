@@ -13,6 +13,7 @@ class Editor(object):
         self.y = 0
         self.scroll = 0
         self.content = []
+        self.undo_buffer = []
         self.mode = self.command_mode
         self.last_command = None
 
@@ -113,6 +114,15 @@ class Editor(object):
         if self.content[y][x:x+1] not in (u'', u' '):
             self.splice(y, x, x+1, u' ')
 
+    def remember(self):
+        self.undo_buffer.append((u'\n'.join(self.content), self.x, self.y))
+
+    def undo(self):
+        if self.undo_buffer:
+            content, x, y = self.undo_buffer.pop()
+            self.content = content.split(u'\n')
+            self.move_to(x, y)
+
 
     # MODY
 
@@ -135,12 +145,14 @@ class Editor(object):
             self.vimim.darkness = time.time() + 30
         if key == pygame.K_w:
             self.last_command = key
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), line[::-1])
         if key == pygame.K_e:
             self.move_by(0, -1)
         if key == pygame.K_t:
             self.last_command = key
+            self.remember()
             my_x = self.x
             my_line = self.normalize_line()
             while self.content and not self.content[-1].rstrip(): self.content.pop()
@@ -153,12 +165,18 @@ class Editor(object):
             self.move_to(my_x, my_y)
         if key == pygame.K_y:
             self.last_command = key
+            self.remember()
             self.mode = self.lottery_mode
+        if key == pygame.K_u:
+            self.last_command = None
+            self.mode = self.undo_mode
         if key == pygame.K_i:
             self.last_command = key
+            self.remember()
             self.mode = self.insert_mode
         if key == pygame.K_o:
             self.last_command = key
+            self.remember()
             self.mode = self.overwrite_mode
         if key == pygame.K_p:
             self.last_command = key
@@ -179,16 +197,19 @@ class Editor(object):
             self.move_to(len(self.content[self.y].rstrip()), self.y)
         if key == pygame.K_l:
             self.last_command = key
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), line.lower())
         if key == pygame.K_x:
             self.move_by(0, 1)
         if key == pygame.K_c:
             self.last_command = key
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), line.swapcase())
         if key == pygame.K_b:
             self.last_command = key
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line) - len(line.lstrip()), u' ' * random.randint(0, 8))
         if key == pygame.K_n:
@@ -213,33 +234,43 @@ class Editor(object):
         key = event.key
 
         if key == pygame.K_e:
+            self.remember()
             self.merge_line()
         if key == pygame.K_r:
+            self.remember()
             self.normalize(self.y, 0)
             self.content.pop(self.y)
             self.move_to(0, self.y)
         if key == pygame.K_o:
+            self.remember()
             for (dx,dy) in ((-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)):
                 self.blank_char(self.y + dy, self.x + dx)
         if key == pygame.K_p:
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), re.sub(ur'[A-Za-z]', u'', line).rstrip())
         if key == pygame.K_s:
+            self.remember()
             self.normalize_line()
             prefix = self.content[self.y][0:self.x]
             self.splice(self.y, 0, len(prefix), re.sub(ur'(\w+|\W+)$', u'', prefix))
         if key == pygame.K_v:
+            self.remember()
             self.content = []
             self.move_to(0, 0)
         if key == pygame.K_b:
+            self.remember()
             pass # TODO
         if key == pygame.K_z:
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), re.sub(ur'[\(\)\[\]{}]', u'', line).rstrip())
         if key == pygame.K_c:
+            self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), re.sub(ur'[0-9]', u'', line).rstrip())
         if key == pygame.K_n:
+            self.remember()
             self.normalize_line()
             prefix = self.content[self.y][0:self.x]
             self.splice(self.y, 0, len(prefix), prefix[0:random.randint(0, len(prefix))])
@@ -314,3 +345,23 @@ class Editor(object):
             self.bell()
 
     jump_mode.name = u'jump to:'
+
+
+    def undo_mode(self, event):
+        if not event:
+            self.undo()
+            self.undo()
+            return
+
+        if event.mod & (pygame.KMOD_CTRL | pygame.KMOD_ALT):
+            self.bell()
+            return
+        if event.key == pygame.K_u:
+            self.undo()
+            self.undo()
+            self.undo()
+            self.mode = self.command_mode
+        else:
+            self.bell()
+
+    undo_mode.name = u'-- UNDO MODE --'

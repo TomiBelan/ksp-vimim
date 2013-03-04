@@ -17,7 +17,7 @@ class Editor(object):
 
     @property
     def height(self):
-        return 25   # TODO status bar
+        return 24 if self.vimim.have_status_bar else 25
 
     def draw(self, ctx):
         screen = Screen()
@@ -26,14 +26,17 @@ class Editor(object):
         if (0 <= self.y - self.scroll < self.height) and (0 <= self.x < 80):
             screen.bg[self.y - self.scroll][self.x] = screen.fg[self.y - self.scroll][self.x]
             screen.fg[self.y - self.scroll][self.x] = screen.mainbg
-        # TODO status bar
+        if self.vimim.have_status_bar:
+            self.vimim.draw_generic_status_bar(screen)
+            screen.write(0, 24, self.mode.name)
+        self.vimim.postprocess_screen(screen)
         self.vimim.window.draw_terminal(self.vimim.window, ctx, screen)
 
     def keydown(self, event):
         self.mode(event)
 
     def bell(self):
-        pass   # TODO
+        self.vimim.bell()
 
     def pay(self):
         return self.vimim.pay(3)

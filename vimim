@@ -71,6 +71,19 @@ class Vimim(object):
         return pygame.event.Event(pygame.KEYDOWN,
             unicode=code, key=event.key, mod=event.mod)
 
+    def bell(self):
+        pass   # TODO
+
+    @property
+    def have_status_bar(self):
+        return True   # TODO
+
+    def draw_generic_status_bar(self, screen):
+        pass   # TODO kredity
+
+    def postprocess_screen(self, screen):
+        pass   # TODO
+
 
 if __name__ == '__main__':
     Vimim().run()

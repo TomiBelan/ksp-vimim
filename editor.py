@@ -156,6 +156,8 @@ class Editor(object):
             self.move_by(1, 0)
         if key == pygame.K_h:
             self.move_to(0, 0)
+        if key == pygame.K_j:
+            self.mode = self.jump_mode
         if key == pygame.K_k:
             self.normalize_line()
             self.move_to(len(self.content[self.y].rstrip()), self.y)
@@ -258,10 +260,28 @@ class Editor(object):
         if event.unicode.lower() == u'o':
             # free
             self.mode = self.command_mode
-        elif len(event.unicode) == 1 and event.unicode != u'\n' and ord(event.unicode) >= 32:
+        elif len(event.unicode) == 1 and ord(event.unicode) >= 32:
             if not self.pay(): return
             self.splice(self.y, self.x, self.x + 1, event.unicode)
         else:
             self.bell()
 
     overwrite_mode.name = u'-- OPRAVUJEM MODE --'
+
+
+    def jump_mode(self, event):
+        if not event: return
+
+        if len(event.unicode) == 1 and ord(event.unicode) >= 32:
+            best = (float('inf'), 0, self.y, self.x)
+            for y, line in enumerate(self.content):
+                for x, ch in enumerate(line):
+                    if ch == event.unicode:
+                        dist = (y - self.y)**2 + (x - self.x)**2
+                        best = min(best, (dist, abs(y - self.y), y, x))
+            self.move_to(best[3], best[2])
+            self.mode = self.command_mode
+        else:
+            self.bell()
+
+    jump_mode.name = u'jump to:'

@@ -12,6 +12,7 @@ else:
     import draw_cairo as draw
 
 from editor import Editor
+from help import Help
 
 
 class Vimim(object):
@@ -21,8 +22,9 @@ class Vimim(object):
         self.window.draw = self.draw
         self.window.react = self.react
         self.window.draw_terminal = draw.draw_terminal
-        self.editor = Editor(self)
-        self.mode = self.editor
+        self.editor_app = Editor(self)
+        self.help_app = Help(self)
+        self.app = self.editor_app
 
     def run(self):
         w = 800   # TODO
@@ -33,14 +35,14 @@ class Vimim(object):
         pygame.key.set_repeat(500, 30)   # SDL defaults
 
     def draw(self, ctx):
-        self.mode.draw(ctx)
+        self.app.draw(ctx)
 
     def react(self, event):
         if event.type == pygame.QUIT:
             self.window.running = False
         if event.type == pygame.KEYDOWN:
             #print (event.unicode, event.key, event.mod)
-            self.mode.keydown(self.normalize_key(event))
+            self.app.keydown(self.normalize_key(event))
 
     def pay(self, price):
         return True   # TODO

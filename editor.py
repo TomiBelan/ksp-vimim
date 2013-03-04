@@ -150,6 +150,9 @@ class Editor(object):
         if key == pygame.K_o:
             self.last_command = key
             self.mode = self.overwrite_mode
+        if key == pygame.K_p:
+            self.last_command = key
+            self.vimim.app = self.vimim.help_app
         if key == pygame.K_a:
             self.move_by(-1, 0)
         if key == pygame.K_d:

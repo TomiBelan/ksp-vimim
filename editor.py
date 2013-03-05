@@ -4,6 +4,7 @@ import re
 import time
 import pygame
 import random
+import colorsys
 from screen import Screen
 
 class Editor(object):
@@ -16,6 +17,7 @@ class Editor(object):
         self.undo_buffer = []
         self.mode = self.command_mode
         self.last_command = None
+        self.highlight = { u' ': (0.7, 0.7, 0.7) }
 
     @property
     def height(self):
@@ -25,9 +27,19 @@ class Editor(object):
         screen = Screen()
         for y, line in enumerate(self.content[self.scroll:self.scroll+self.height]):
             screen.write(0, y, line[0:80])
+
+        if self.vimim.features['highlight']:
+            for y in xrange(self.height):
+                for x in xrange(80):
+                    ch = screen.chars[y][x]
+                    if ch not in self.highlight:
+                        self.highlight[ch] = colorsys.hsv_to_rgb(random.random(), 0.5*random.random()+0.5, 1)
+                    screen.fg[y][x] = self.highlight[ch]
+
         if (0 <= self.y - self.scroll < self.height) and (0 <= self.x < 80) and not self.vimim.features['nocursor']:
             screen.bg[self.y - self.scroll][self.x] = screen.fg[self.y - self.scroll][self.x]
             screen.fg[self.y - self.scroll][self.x] = screen.mainbg
+
         if self.vimim.have_status_bar:
             self.vimim.draw_generic_status_bar(screen)
             screen.write(0, 24, self.mode.name)

@@ -188,6 +188,9 @@ class Editor(object):
             self.move_to(0, len(self.content))
         if key == pygame.K_f:
             self.move_by(1, 0)
+        if key == pygame.K_g:
+            self.last_command = key
+            self.vimim.app = self.vimim.game_app
         if key == pygame.K_h:
             self.move_to(0, 0)
         if key == pygame.K_j:

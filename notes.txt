@@ -13,6 +13,11 @@ Nahodne TODO:
 - **minihra**
 - sejvovanie furt (pickle?)
 
+Minihra TODO:
+- zmeny rychlosti
+- vyhravanie
+- beh na pozadi (3/4 rychlostou?)
+
 
 
 Command mode:
@@ -79,6 +84,11 @@ Configuration:
   - Backspace=zrus, Enter=OK, F10=cancel
 
 
+Game mode:
+- ked speed == 5, je to o hubu vobec sa udrzat
+- ked speed == 10, je to datelne - ked si uplne vpravo, trva 47 sekund kym umries
+
+
 
 Features:
 + highlightovanie
@@ -102,6 +112,7 @@ Features popisy:
 - Plná obrazovka
   Informácie v status bare sa schovajú, aby ste sa mohli plne sústrediť na
   editovaný text a videli z neho čo najviac.
+  TODO preformulovat lebo status bar na zaciatku vidno
 - Farebné zvýrazňovanie
   Mýlia sa vám 0 s O, 1 s l, a podobne? Iné editory vám možno ponúkajú
   zvýrazňovanie čísel atď. inou farbou, ale Vimim dokáže zvýrazňovať nielen
@@ -133,11 +144,11 @@ Features popisy:
   Nechcete kurzor veľký ako jeden znak? Niektoré editory ponúkajú šírku
   jeden pixel, ale iba Vimim podporuje skutočne kompaktný 0-pixelový
   kurzor!
-- Šifrovaný editor
+- ROT13 šifrovanie
   Striehnu vám za ramenom mraky ľudí, pripravení odkukať vám vo chvíľke
   nepozornosti vaše heslo, alebo dokonca vaše intelektuálne vlastníctvo?
-  Zapnite si šifrovanie editora rokmi overenou šifrou ROT13 a zmaríte ich
-  temné plány!
+  Zašifrujte váš editor rokmi overenou šifrou ROT13 a zmaríte ich temné
+  plány!
 - Integrované debugovanie
   Ak váš program alebo kompilátor vyhodí chybu, Vimim vám ukáže, kde je,
   priamo v editore.

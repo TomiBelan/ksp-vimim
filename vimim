@@ -13,6 +13,7 @@ else:
     import draw_cairo as draw
 
 from editor import Editor
+from game import Game
 from help import Help
 
 
@@ -28,6 +29,7 @@ class Vimim(object):
         self.darkness = 0
 
         self.editor_app = Editor(self)
+        self.game_app = Game(self)
         self.help_app = Help(self)
         self.app = self.editor_app
 
@@ -92,6 +94,7 @@ class Vimim(object):
 
     def draw_generic_status_bar(self, screen):
         screen.recolor(0, 80, 24, (1, 1, 1), None)
+        # TODO warning?
         pass   # TODO kredity
 
     def postprocess_screen(self, screen):

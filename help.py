@@ -31,7 +31,7 @@ class Help(object):
 
 help_text = u'''
 
-    POMOCNÍK
+    VIMIM - POMOCNÍK
 
 
     Základné príkazy:

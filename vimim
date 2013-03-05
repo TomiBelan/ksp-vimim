@@ -97,7 +97,7 @@ class Vimim(object):
 
     @property
     def have_status_bar(self):
-        return True   # TODO
+        return not self.features['nostatus']
 
     def draw_generic_status_bar(self, screen):
         screen.recolor(0, 80, 24, (1, 1, 1), None)

@@ -33,10 +33,12 @@ class Config(object):
         for i, row in enumerate(feature_descs[selfid].split(u'\n')):
             screen.write(0, desc_y+i, row)
 
-        screen.write(0, 23, u'Z: Zapnúť')
-        screen.write(20, 23, u'V: Vypnúť')   # TODO cena
-        screen.write(60, 23, u'C: Config zavrieť')
-        for i in xrange(4): screen.recolor(20*i, 20*i+1, 23, (1, 1, 0), None)
+        bottom = 23 if self.vimim.have_status_bar else 24
+        screen.write(0, bottom, u'Z: Zapnúť')
+        screen.write(20, bottom, u'V: Vypnúť')   # TODO cena
+        screen.write(60, bottom, u'C: Config zavrieť')
+        for i in xrange(4):
+            screen.recolor(20*i, 20*i+1, bottom, (1, 1, 0), None)
 
         if self.vimim.have_status_bar:
             self.vimim.draw_generic_status_bar(screen)

@@ -11,6 +11,7 @@ Nahodne TODO:
 - **kredity**
 - **features**
 - **minihra**
+- sejvovanie furt (pickle?)
 
 
 
@@ -69,24 +70,78 @@ n: nahodne
 m: toggluje
 zvysok: nic (beep?)
 
+Configuration:
+- hore bude zoznam featurov (bude ich max 15, zmestia sa)
+- pod zoznamom je nejaky kratky popis focusnutej
+- dole je action bar ala nano
+- E=hore, X=dole, Z=zapnut, V=vypnut, C=naspat do command modu
+- K=kupon
+  - Backspace=zrus, Enter=OK, F10=cancel
+
 
 
 Features:
 + highlightovanie
 + hide status bar (more screen estate)
-- high contrast color scheme
+- sibnuty color scheme (fg=#f00 bg=#0f0) (ledaze by: fg=#f69 bg=#cf3)
 + accessibility (vsetko velkym pismom)
 - sachovy kon
-- kurzor chodi zhora dole
+* kurzor chodi zhora dole
 - 180 stupnov
-- kazdy znak sa napise 2x (zdvojnasobi vasu efektivitu)
+* kazdy znak sa napise 2x (zdvojnasobi vasu efektivitu)
 + schovat compiler status (rage lessener)
-+ hrozne sproste matchovanie zatvoriek (PSPad level)
-- spellchecking (for->fór, main->mamin, until->nútil, while->Chile)
-- center align [hmm mozno prilis komplikovane]
-- schovat kurzor
++ hrozne sproste matchovanie zatvoriek (PSPad level) (also uvodzovky!!!)
+- spellchecking (for->fór, bool->bol, main->mamin, until->nútil, while->Chile,
+  char->cmar, case->čase)
+* schovat kurzor
 - rot13
 - IDE - compiler vysledky priamo v texte
+(* = zapinat az ked submitnu aspon dve ulohy)
+
+Features popisy:
+- Plná obrazovka
+  Informácie v status bare sa schovajú, aby ste sa mohli plne sústrediť na
+  editovaný text a videli z neho čo najviac.
+- Farebné zvýrazňovanie
+  Mýlia sa vám 0 s O, 1 s l, a podobne? Iné editory vám možno ponúkajú
+  zvýrazňovanie čísel atď. inou farbou, ale Vimim dokáže zvýrazňovať nielen
+  čísla, ale úplne všetko.
+- Pokojná zelená
+  Ste v neustálom strese? Vimim ponúka práve pre vás ukľudňujúce zelené
+  pozadie. Ale aby ste neboli kľudní až príliš a nezaspali pri kódení,
+  vyvažuje ho akčným červeným písmom.
+- Pomoc pre zrakovo postihnutých používateľov
+  Nevidíte na obrazovku? Nevadí. Vimim môže všetky písmená zobrazovať väčšie.
+- Šachový kôň
+  Vimim vám pri editovaní pomôže trénovať sa v šachu. Alebo aspoň v pohybe
+  šachového koňa.
+- Japonské písanie textu
+  Písanie znakov japonským spôsobom. Samozrejme, funguje to aj s latinkou.
+- Iný uhol pohľadu
+  Nie a nie nájsť, kde je bug? Možno pomôže zmeniť pohľad na vec.
+- Dvakrát väčšia efektivita
+  Pomocou tejto fičúrie ľahko napíšete dvakrát toľko kódu za rovnaký čas.
+- Šetrič nervov
+  Tlie vám program? Vytáča vás kompilátor? Stále hádže WA? Šetrite vaše
+  nervy a zapnite si túto fičúriu.
+- Automatické doplnenie zátvoriek a úvodzoviek
+  Doplní zatvárajúce párové znaky (zátvorky, úvodzovky a podobne).
+- Kontrola pravopisu
+  Ak neovládaš spisovnú slovenčinu a spravíš nejaký preklep alebo chybu,
+  neboj sa, Vimim ju za teba opraví.
+- Kompaktný kurzor
+  Nechcete kurzor veľký ako jeden znak? Niektoré editory ponúkajú šírku
+  jeden pixel, ale iba Vimim podporuje skutočne kompaktný 0-pixelový
+  kurzor!
+- Šifrovaný editor
+  Striehnu vám za ramenom mraky ľudí, pripravení odkukať vám vo chvíľke
+  nepozornosti vaše heslo, alebo dokonca vaše intelektuálne vlastníctvo?
+  Zapnite si šifrovanie editora rokmi overenou šifrou ROT13 a zmaríte ich
+  temné plány!
+- Integrované debugovanie
+  Ak váš program alebo kompilátor vyhodí chybu, Vimim vám ukáže, kde je,
+  priamo v editore.
+
 
 ak budu mat vela kreditov, spravime za keystroky v game mode timesink.
 (alebo za dynamit!)

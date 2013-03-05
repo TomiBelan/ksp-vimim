@@ -110,7 +110,7 @@ ROT13 šifrovanie
     Striehnu vám za ramenom mraky ľudí, pripravení odkukať vám vo chvíľke
     nepozornosti vaše heslá, alebo (glg!) vaše intelektuálne vlastníctvo?
     Zašifrujte váš editor rokmi overenou šifrou ROT13 a zmaríte ich temné
-    plány!
+    plány! (Pozor, písmená s diakritikou zostanú nezašifrované.)
 
 nostatus
 Plná obrazovka

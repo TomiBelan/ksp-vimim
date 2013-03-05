@@ -109,6 +109,15 @@ class Vimim(object):
         # TODO kredity
 
     def postprocess_screen(self, screen):
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        retters = letters[13:] + letters[:13]
+        rot13 = dict(zip(letters, retters) + zip(letters.upper(), retters.upper()))
+
+        if self.features['rot13']:
+            for y in xrange(25):
+                for x in xrange(80):
+                    screen.chars[y][x] = rot13.get(screen.chars[y][x], screen.chars[y][x])
+
         if time.time() < self.darkness:
             screen.mainbg = (0, 0, 0)
             for y in xrange(25):

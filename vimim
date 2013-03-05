@@ -88,6 +88,10 @@ class Vimim(object):
         return pygame.event.Event(pygame.KEYDOWN,
             unicode=code, key=event.key, mod=event.mod)
 
+    @property
+    def features(self):
+        return self.config_app.features
+
     def bell(self):
         pass   # TODO
 

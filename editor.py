@@ -154,6 +154,12 @@ class Editor(object):
             key = self.last_command
             if key is None: return
 
+        def arrow(dx, dy):
+            self.move_by(dx, dy)
+            if self.vimim.features['horse']:
+                self.move_by(dx, dy)
+                self.move_by(dy * random.choice((-1, 1)), dx * random.choice((-1, 1)))
+
         if key == pygame.K_q:
             self.last_command = key
             self.vimim.darkness = time.time() + 30
@@ -163,7 +169,7 @@ class Editor(object):
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), line[::-1])
         if key == pygame.K_e:
-            self.move_by(0, -1)
+            arrow(0, -1)
         if key == pygame.K_t:
             self.last_command = key
             self.remember()
@@ -196,12 +202,12 @@ class Editor(object):
             self.last_command = key
             self.vimim.app = self.vimim.help_app
         if key == pygame.K_a:
-            self.move_by(-1, 0)
+            arrow(-1, 0)
         if key == pygame.K_d:
             while self.content and not self.content[-1].rstrip(): self.content.pop()
             self.move_to(0, len(self.content))
         if key == pygame.K_f:
-            self.move_by(1, 0)
+            arrow(1, 0)
         if key == pygame.K_g:
             self.last_command = key
             self.vimim.app = self.vimim.game_app
@@ -218,7 +224,7 @@ class Editor(object):
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), line.lower())
         if key == pygame.K_x:
-            self.move_by(0, 1)
+            arrow(0, 1)
         if key == pygame.K_c:
             self.last_command = key
             self.vimim.app = self.vimim.config_app

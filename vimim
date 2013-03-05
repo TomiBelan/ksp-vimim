@@ -108,17 +108,17 @@ class Vimim(object):
 
         # TODO kredity
 
-    def postprocess_screen(self, screen):
+    def postprocess_screen(self, screen, ingame=False):
         letters = 'abcdefghijklmnopqrstuvwxyz'
         retters = letters[13:] + letters[:13]
         rot13 = dict(zip(letters, retters) + zip(letters.upper(), retters.upper()))
 
-        if self.features['rot13']:
+        if self.features['rot13'] and not ingame:
             for y in xrange(25):
                 for x in xrange(80):
                     screen.chars[y][x] = rot13.get(screen.chars[y][x], screen.chars[y][x])
 
-        if self.features['large']:
+        if self.features['large'] and not ingame:
             for y in xrange(25):
                 for x in xrange(80):
                     screen.chars[y][x] = screen.chars[y][x].upper()
@@ -134,7 +134,7 @@ class Vimim(object):
                         screen.bg[y][x] = None
                         screen.fg[y][x] = (1, 0, 0)
 
-        if time.time() < self.darkness:
+        if time.time() < self.darkness and not ingame:
             screen.mainbg = (0, 0, 0)
             for y in xrange(25):
                 for x in xrange(80):

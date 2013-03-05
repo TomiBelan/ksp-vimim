@@ -38,7 +38,7 @@ class Game(object):
         if self.vimim.have_status_bar:
             self.vimim.draw_generic_status_bar(screen)
             screen.write(0, 24, u'-- GAME MODE --')
-        # TODO isto ziaden postprocess?
+        self.vimim.postprocess_screen(screen, ingame=True)
         self.vimim.window.draw_terminal(self.vimim.window, ctx, screen)
 
     def keydown(self, event):

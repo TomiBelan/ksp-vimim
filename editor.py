@@ -303,21 +303,30 @@ class Editor(object):
     def insert_mode(self, event):
         if not event: return
 
-        mult = 2 if self.vimim.features['double'] else 1
-        if event.unicode.lower() == u'i':
-            # free
-            self.mode = self.command_mode
-        elif event.unicode == u'\n':
-            if not self.pay(): return
-            for i in xrange(mult): self.newline()
-        elif event.unicode == u'\t':
-            if not self.pay(): return
-            self.splice(self.y, self.x, self.x, u' ' * mult)
-        elif event.unicode and ord(event.unicode[0]) >= 32:
-            if not self.pay(): return
-            self.splice(self.y, self.x, self.x, event.unicode * mult)
-        else:
-            self.bell()
+        for i in xrange(2 if self.vimim.features['double'] else 1):
+            code = event.unicode
+            if code == u'\t': code = u' '
+
+            if code.lower() == u'i':
+                # free
+                self.mode = self.command_mode
+                return
+            elif code == u'\n':
+                if not self.pay(): return
+                if self.vimim.features['japan']:
+                    self.move_to(self.x - 1, 0)
+                else:
+                    self.newline()
+            elif code and ord(code[0]) >= 32:
+                if not self.pay(): return
+                if self.vimim.features['japan']:
+                    self.splice(self.y, self.x, self.x + len(code), code)
+                    self.move_by(0, 1)
+                else:
+                    self.splice(self.y, self.x, self.x, code)
+            else:
+                self.bell()
+                return
 
     insert_mode.name = u'-- INSERT MODE --'
 

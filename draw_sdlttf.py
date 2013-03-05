@@ -80,6 +80,9 @@ def draw_terminal(window, screensurf, screen):
     fps = window.terminal_font.render('%.3ffps' % window.clock.get_fps(), True, (255, 255, 255))
     screensurf.blit(fps, (0, window.h - fps.get_size()[1]))
 
+    if screen.flip:
+        screensurf.blit(pygame.transform.flip(screensurf, True, True), (0, 0))
+
 
 def draw_test(ctx):
     ctx.select_font_face('monospace')

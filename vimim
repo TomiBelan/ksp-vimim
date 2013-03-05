@@ -134,6 +134,9 @@ class Vimim(object):
                         screen.bg[y][x] = None
                         screen.fg[y][x] = (1, 0, 0)
 
+        if self.features['180']:
+            screen.flip = True
+
         if time.time() < self.darkness and not ingame:
             screen.mainbg = (0, 0, 0)
             for y in xrange(25):

@@ -6,6 +6,7 @@ class Screen(object):
         self.chars = [[u' '] * 80 for i in xrange(25)]
         self.fg = [[mainfg] * 80 for i in xrange(25)]
         self.bg = [[None] * 80 for i in xrange(25)]
+        self.flip = False
 
     def write(self, x, y, s):
         for i, c in enumerate(s):

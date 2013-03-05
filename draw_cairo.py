@@ -77,6 +77,9 @@ def draw_terminal(window, ctx, screen):
         ctx.restore()
 
     ctx.save()
+    if screen.flip:
+        ctx.translate(window.w, window.h)
+        ctx.rotate(math.pi)
     ctx.set_source_rgb(1, 1, 1)
     ctx.translate(0, -descent)
 #    ctx.rotate(0.5*(2*math.pi)/360)

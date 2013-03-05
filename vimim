@@ -118,6 +118,11 @@ class Vimim(object):
                 for x in xrange(80):
                     screen.chars[y][x] = rot13.get(screen.chars[y][x], screen.chars[y][x])
 
+        if self.features['large']:
+            for y in xrange(25):
+                for x in xrange(80):
+                    screen.chars[y][x] = screen.chars[y][x].upper()
+
         if time.time() < self.darkness:
             screen.mainbg = (0, 0, 0)
             for y in xrange(25):

@@ -123,6 +123,17 @@ class Vimim(object):
                 for x in xrange(80):
                     screen.chars[y][x] = screen.chars[y][x].upper()
 
+        if self.features['green']:
+            screen.mainbg = (0, 1, 0)
+            for y in xrange(25):
+                for x in xrange(80):
+                    if screen.bg[y][x]:
+                        screen.bg[y][x] = (1, 0, 0)
+                        screen.fg[y][x] = (0, 1, 0)
+                    else:
+                        screen.bg[y][x] = None
+                        screen.fg[y][x] = (1, 0, 0)
+
         if time.time() < self.darkness:
             screen.mainbg = (0, 0, 0)
             for y in xrange(25):

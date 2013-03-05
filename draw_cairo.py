@@ -70,6 +70,12 @@ def draw_terminal(window, ctx, screen):
     ctx.set_font_size(15)
     ascent, descent, font_height, max_x_advance, max_y_advance = ctx.font_extents()
 
+    if screen.mainbg != (0, 0, 0):
+        ctx.save()
+        ctx.set_source_rgb(*screen.mainbg)
+        ctx.paint()
+        ctx.restore()
+
     ctx.save()
     ctx.set_source_rgb(1, 1, 1)
     ctx.translate(0, -descent)

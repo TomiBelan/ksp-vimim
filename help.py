@@ -26,7 +26,7 @@ class Help(object):
             self.vimim.bell()
 
     def idle(self):
-        pass
+        self.vimim.game_app.idle()
 
 
 help_text = u'''

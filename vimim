@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 from __future__ import division
 
@@ -94,8 +95,12 @@ class Vimim(object):
 
     def draw_generic_status_bar(self, screen):
         screen.recolor(0, 80, 24, (1, 1, 1), None)
-        # TODO warning?
-        pass   # TODO kredity
+
+        if self.game_app.x <= 11 and int(time.time() / 0.2) % 2:
+            screen.recolor(50, 80, 24, (0, 1, 0), None)
+            screen.write(50, 24, u"!!! VYHRÁVAŠ !!!")
+
+        # TODO kredity
 
     def postprocess_screen(self, screen):
         if time.time() < self.darkness:

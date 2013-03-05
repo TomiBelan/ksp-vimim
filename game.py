@@ -16,7 +16,7 @@ class Game(object):
     def reset(self):
         self.enemies = [[random.random() < 1-0.1*x for y in xrange(24)] for x in xrange(80)]
         self.columns = [self.make_column() for x in xrange(80)]
-        self.x = 40
+        self.x = 55
         self.y = 12
         self.columns[self.x][self.y] = False
         self.ticks = 0
@@ -69,6 +69,7 @@ class Game(object):
             self.win()
 
     def win(self):
+        print "winrar!"   # DEBUG
         # TODO congratulation
         self.reset()
 
@@ -82,9 +83,9 @@ class Game(object):
         return True
 
     def idle(self):
-        self.ticks += 1
-        if self.ticks >= self.speed:
-            self.ticks -= self.speed
+        self.ticks += (4 if self.vimim.app == self else 3)
+        if self.ticks >= self.speed*4:
+            self.ticks -= self.speed*4
             self.columns.pop(0)
             self.columns.append(self.make_column())
             if self.x > 0: self.x -= 1

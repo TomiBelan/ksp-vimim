@@ -16,7 +16,6 @@ Nahodne TODO:
 Minihra TODO:
 - zmeny rychlosti
 - vyhravanie
-- beh na pozadi (3/4 rychlostou?)
 
 
 

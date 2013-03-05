@@ -38,6 +38,7 @@ class Editor(object):
         self.mode(event)
 
     def idle(self):
+        self.vimim.game_app.idle()
         self.mode(None)
 
     def bell(self):

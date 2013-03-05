@@ -7,6 +7,9 @@ import random
 import colorsys
 from screen import Screen
 
+corrections = u'for/fór bool/bol main/mamin until/nútil while/Chile char/cmar case/čase'
+corrections = dict(s.split('/') for s in corrections.split())
+
 class Editor(object):
     def __init__(self, vimim):
         self.vimim = vimim
@@ -307,7 +310,13 @@ class Editor(object):
 
 
     def insert_mode(self, event):
-        if not event: return
+        if not event:
+            if self.vimim.features['spellcheck'] and random.randint(0, 4) == 0:
+                self.normalize(self.y, self.x)
+                for key in corrections:
+                    if self.content[self.y][self.x-len(key):self.x] == key:
+                        self.splice(self.y, self.x-len(key), self.x, corrections[key])
+            return
 
         for i in xrange(2 if self.vimim.features['double'] else 1):
             code = event.unicode

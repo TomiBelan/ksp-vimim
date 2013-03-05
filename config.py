@@ -127,7 +127,8 @@ Iný pohľad na vec
 
 double
 Zdvojnásobená efektivita
-    S touto fičúriou ľahko napíšete dvakrát toľko kódu za rovnaký čas.
+    Chcete za rovnaký čas napísať dvakrát toľko kódu? Vimim vám pomôže
+    dosiahnuť tento cieľ a získať si tým obdiv všetkých okolo vás.
 
 spellcheck
 Kontrola pravopisu

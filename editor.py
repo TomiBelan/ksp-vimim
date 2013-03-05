@@ -291,18 +291,19 @@ class Editor(object):
     def insert_mode(self, event):
         if not event: return
 
+        mult = 2 if self.vimim.features['double'] else 1
         if event.unicode.lower() == u'i':
             # free
             self.mode = self.command_mode
         elif event.unicode == u'\n':
             if not self.pay(): return
-            self.newline()
+            for i in xrange(mult): self.newline()
         elif event.unicode == u'\t':
             if not self.pay(): return
-            self.splice(self.y, self.x, self.x, u' ')
+            self.splice(self.y, self.x, self.x, u' ' * mult)
         elif event.unicode and ord(event.unicode[0]) >= 32:
             if not self.pay(): return
-            self.splice(self.y, self.x, self.x, event.unicode)
+            self.splice(self.y, self.x, self.x, event.unicode * mult)
         else:
             self.bell()
 

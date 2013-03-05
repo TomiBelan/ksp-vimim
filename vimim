@@ -13,6 +13,7 @@ if os.getenv('sdlttf'):
 else:
     import draw_cairo as draw
 
+from config import Config
 from editor import Editor
 from game import Game
 from help import Help
@@ -29,6 +30,7 @@ class Vimim(object):
         self.last_idle = 0
         self.darkness = 0
 
+        self.config_app = Config(self)
         self.editor_app = Editor(self)
         self.game_app = Game(self)
         self.help_app = Help(self)
@@ -96,7 +98,7 @@ class Vimim(object):
     def draw_generic_status_bar(self, screen):
         screen.recolor(0, 80, 24, (1, 1, 1), None)
 
-        if self.game_app.x <= 11 and int(time.time() / 0.2) % 2:
+        if self.game_app.x <= 12 and int(time.time() / 0.2) % 2:
             screen.recolor(50, 80, 24, (0, 1, 0), None)
             screen.write(50, 24, u"!!! VYHRÁVAŠ !!!")
 

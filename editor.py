@@ -135,7 +135,8 @@ class Editor(object):
         if not (pygame.K_a <= event.key <= pygame.K_z):
             self.bell()
             return
-        if not self.pay(): return
+        if event.key not in (pygame.K_c, pygame.K_p):   # free
+            if not self.pay(): return
         key = event.key
         if key == pygame.K_r:
             key = self.last_command
@@ -206,6 +207,9 @@ class Editor(object):
             self.splice(self.y, 0, len(line), line.lower())
         if key == pygame.K_x:
             self.move_by(0, 1)
+        if key == pygame.K_c:
+            self.last_command = key
+            self.vimim.app = self.vimim.config_app
         if key == pygame.K_v:
             self.last_command = key
             self.remember()
@@ -330,7 +334,7 @@ class Editor(object):
             return
         self.mode = self.command_mode
 
-    lottery_mode.name = u'-- LOTTERY MODE --'
+    lottery_mode.name = u'-- LOTÉRIA MODE --'
 
 
     def jump_mode(self, event):

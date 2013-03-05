@@ -13,6 +13,7 @@ class Help(object):
             screen.write(0, y, line[0:80])
         if self.vimim.have_status_bar:
             self.vimim.draw_generic_status_bar(screen)
+            screen.write(0, 24, u'-- POMOCNÍK MODE --')
         self.vimim.postprocess_screen(screen)
         self.vimim.window.draw_terminal(self.vimim.window, ctx, screen)
 
@@ -31,7 +32,7 @@ class Help(object):
 
 help_text = u'''
 
-    VIMIM - POMOCNÍK
+    VIMIM - Vi Improved Improved
 
 
     Základné príkazy:

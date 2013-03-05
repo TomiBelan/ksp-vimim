@@ -107,51 +107,6 @@ Features:
 - IDE - compiler vysledky priamo v texte
 (* = zapinat az ked submitnu aspon dve ulohy)
 
-Features popisy:
-- Plná obrazovka
-  Informácie v status bare sa schovajú, aby ste sa mohli plne sústrediť na
-  editovaný text a videli z neho čo najviac.
-  TODO preformulovat lebo status bar na zaciatku vidno
-- Farebné zvýrazňovanie
-  Mýlia sa vám 0 s O, 1 s l, a podobne? Iné editory vám možno ponúkajú
-  zvýrazňovanie čísel atď. inou farbou, ale Vimim dokáže zvýrazňovať nielen
-  čísla, ale úplne všetko.
-- Pokojná zelená
-  Ste v neustálom strese? Vimim ponúka práve pre vás ukľudňujúce zelené
-  pozadie. Ale aby ste neboli kľudní až príliš a nezaspali pri kódení,
-  vyvažuje ho akčným červeným písmom.
-- Pomoc pre zrakovo postihnutých používateľov
-  Nevidíte na obrazovku? Nevadí. Vimim môže všetky písmená zobrazovať väčšie.
-- Šachový kôň
-  Vimim vám pri editovaní pomôže trénovať sa v šachu. Alebo aspoň v pohybe
-  šachového koňa.
-- Japonské písanie textu
-  Písanie znakov japonským spôsobom. Samozrejme, funguje to aj s latinkou.
-- Iný uhol pohľadu
-  Nie a nie nájsť, kde je bug? Možno pomôže zmeniť pohľad na vec.
-- Dvakrát väčšia efektivita
-  Pomocou tejto fičúrie ľahko napíšete dvakrát toľko kódu za rovnaký čas.
-- Šetrič nervov
-  Tlie vám program? Vytáča vás kompilátor? Stále hádže WA? Šetrite vaše
-  nervy a zapnite si túto fičúriu.
-- Automatické doplnenie zátvoriek a úvodzoviek
-  Doplní zatvárajúce párové znaky (zátvorky, úvodzovky a podobne).
-- Kontrola pravopisu
-  Ak neovládaš spisovnú slovenčinu a spravíš nejaký preklep alebo chybu,
-  neboj sa, Vimim ju za teba opraví.
-- Kompaktný kurzor
-  Nechcete kurzor veľký ako jeden znak? Niektoré editory ponúkajú šírku
-  jeden pixel, ale iba Vimim podporuje skutočne kompaktný 0-pixelový
-  kurzor!
-- ROT13 šifrovanie
-  Striehnu vám za ramenom mraky ľudí, pripravení odkukať vám vo chvíľke
-  nepozornosti vaše heslo, alebo dokonca vaše intelektuálne vlastníctvo?
-  Zašifrujte váš editor rokmi overenou šifrou ROT13 a zmaríte ich temné
-  plány!
-- Integrované debugovanie
-  Ak váš program alebo kompilátor vyhodí chybu, Vimim vám ukáže, kde je,
-  priamo v editore.
-
 
 ak budu mat vela kreditov, spravime za keystroky v game mode timesink.
 (alebo za dynamit!)

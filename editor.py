@@ -25,7 +25,7 @@ class Editor(object):
         screen = Screen()
         for y, line in enumerate(self.content[self.scroll:self.scroll+self.height]):
             screen.write(0, y, line[0:80])
-        if (0 <= self.y - self.scroll < self.height) and (0 <= self.x < 80):
+        if (0 <= self.y - self.scroll < self.height) and (0 <= self.x < 80) and not self.vimim.features['nocursor']:
             screen.bg[self.y - self.scroll][self.x] = screen.fg[self.y - self.scroll][self.x]
             screen.fg[self.y - self.scroll][self.x] = screen.mainbg
         if self.vimim.have_status_bar:

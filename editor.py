@@ -318,10 +318,9 @@ class Editor(object):
                         self.splice(self.y, self.x-len(key), self.x, corrections[key])
             return
 
+        code = event.unicode
+        if code == u'\t': code = u' '
         for i in xrange(2 if self.vimim.features['double'] else 1):
-            code = event.unicode
-            if code == u'\t': code = u' '
-
             if code.lower() == u'i':
                 # free
                 self.mode = self.command_mode
@@ -342,6 +341,12 @@ class Editor(object):
             else:
                 self.bell()
                 return
+
+        if self.vimim.features['parens']:
+            pairs = dict(zip(u'([{<"\'', u')]}>"\''))
+            if code in pairs:
+                self.splice(self.y, self.x, self.x, pairs[code])
+                self.move_by(-1, 0)
 
     insert_mode.name = u'-- INSERT MODE --'
 

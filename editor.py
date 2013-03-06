@@ -281,7 +281,10 @@ class Editor(object):
         if event.key not in [ord(c) for c in 'eropsvbzcnm']:
             self.bell()
             return
-        if not self.vimim.pay(self.price_delete): return
+        if event.key == pygame.K_m:
+            pass   # free
+        else:
+            if not self.vimim.pay(self.price_delete): return
         key = event.key
 
         if key == pygame.K_e:

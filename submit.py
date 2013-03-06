@@ -40,7 +40,7 @@ class Submit(object):
         lang = 'pas' if cleaned.startswith('program') or cleaned.endswith('end.') else 'cpp'
         print ['./testovac/testovac.sh', current_task, lang, self.outfile]
         self.process = Popen(['./testovac/testovac.sh', current_task, lang, self.outfile], stdin=PIPE)
-        self.process.stdin.write(content)
+        self.process.stdin.write(content.encode('utf-8'))
         self.process.stdin.close()
 
     def idle(self):

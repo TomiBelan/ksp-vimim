@@ -1,4 +1,4 @@
--
+
 from __future__ import division
 
 import sys
@@ -72,14 +72,15 @@ def draw_terminal(window, screensurf, screen):
             if fg is not None: fg = tuple(fg)
             if bg is not None: bg = tuple(bg)
             cid = (char, fg, bg)
+            if bg: bgb = [int(255 * f) for f in bg]
             if cid not in window.glyph_cache:
                 fgb = [int(255 * f) for f in fg]
                 if bg:
-                    bgb = [int(255 * f) for f in bg]
                     window.glyph_cache[cid] = window.terminal_font.render(char, True, fgb, bgb)
                 else:
                     window.glyph_cache[cid] = window.terminal_font.render(char, True, fgb)
             screensurf.blit(window.glyph_cache[cid], (sx, y * line_height))
+            if bg: screensurf.fill(bgb, (sx+8, y * line_height, 1, line_height))
             #sx += window.glyph_cache[cid].get_size()[0]
             sx += 9
 

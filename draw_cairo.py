@@ -28,6 +28,7 @@ class Window(object):
 
         self.w = w
         self.h = h
+        self.show_fps = False
 
         flags = pygame.FULLSCREEN if fullscreen else 0
         screen = pygame.display.set_mode((w, h), flags)
@@ -59,6 +60,8 @@ class Window(object):
             if not self.running: return
 
             for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN and event.mod & pygame.KMOD_CTRL and event.mod & pygame.KMOD_SHIFT and event.key == pygame.K_f:
+                    self.show_fps = not self.show_fps
                 self.react(event)
                 if not self.running: return
 
@@ -106,12 +109,16 @@ def draw_terminal(window, ctx, screen):
         ctx.restore()
     ctx.restore()
 
-    ctx.save()
-    ctx.set_source_rgb(1, 1, 1)
-    ctx.translate(0, window.h - descent)
-    ctx.new_path()
-    ctx.show_text('%.3ffps' % window.clock.get_fps())
-    ctx.restore()
+    if window.show_fps:
+        ctx.save()
+        ctx.translate(0, window.h - descent)
+        ctx.set_source_rgba(0, 0, 0, 0.8)
+        ctx.rectangle(0, -font_height, 300, font_height)
+        ctx.fill()
+        ctx.set_source_rgb(1, 1, 1)
+        ctx.new_path()
+        ctx.show_text('%.3ffps' % window.clock.get_fps())
+        ctx.restore()
 
 
 def draw_test(ctx):

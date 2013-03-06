@@ -38,7 +38,7 @@ class Submit(object):
         content = u'\n'.join(self.vimim.editor_app.content) + u'\n'
         cleaned = content.replace(u' ', u'').replace(u'\n', u'')
         lang = 'pas' if cleaned.startswith('program') or cleaned.endswith('end.') else 'cpp'
-        # print ['./testovac/testovac.sh', current_task, lang, self.outfile]
+        print ['./testovac/testovac.sh', current_task, lang, self.outfile]
         self.process = Popen(['./testovac/testovac.sh', current_task, lang, self.outfile], stdin=PIPE)
         self.process.stdin.write(content)
         self.process.stdin.close()
@@ -48,6 +48,7 @@ class Submit(object):
         # print 'h', self.process.returncode
         if self.process.poll() is None: return
         # print self.process.returncode
+        code = self.process.returncode
         if self.process.returncode == 0:
             self.vimim.config_app.credits += self.ok_credit_gain
             self.task += 1
@@ -55,6 +56,9 @@ class Submit(object):
         with open(self.outfile) as f: output = f.read().decode('utf-8')
         # print self.outfile
         # print output   # DEBUG
+        print '---------- begin submit log (status %d) ----------' % code
+        print output,
+        print '---------- end submit log ----------'
         if self.vimim.features['noresult']:
             self.vimim.app = self.vimim.editor_app
             return

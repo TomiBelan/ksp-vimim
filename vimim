@@ -39,7 +39,11 @@ class Vimim(object):
         self.last_idle = 0
         self.darkness = 0
 
-        self.task_names = ['kompilovatelne', 'zero', 'hello', 'stream', 'sucet', 'sum']
+        self.task_names = [
+            'kompilovatelne', 'zero', 'hello', 'stream', 'sucet', 'sum',
+            'factorial', 'fibonacci', 'reverse', 'srnka', 'popolvar',
+            'lorem_ipsum', 'median', 'mod9', 'rot', 'difference',
+        ]
 
         self.win_warn = 12
         self.config_app = Config(self)

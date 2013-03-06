@@ -1,0 +1,14 @@
+Úloha: Stredný prvok
+
+Na vstupe je na prvom riadku dané číslo 1 ≤ N ≤ 800 000. Na druhom riadku sa
+nachádza N čísiel 1 ≤ x[i] ≤ 10 000 000. Vašou úlohou je vypísať medián.
+V prípade párneho počtu prvkov je to ten vpravo od stredu.
+
+Príklad:
+
+Vstup:
+4
+47 42 8 1337
+
+Výstup:
+47

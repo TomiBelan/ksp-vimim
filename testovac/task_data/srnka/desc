@@ -1,0 +1,14 @@
+Úloha: Hľadáme editor
+
+Vstup pozostáva z jedného riadku, na ktorom je menej ako 100 znakov
+(vypísateľných, špeciálne teda aj medzery). Ak sa na ňom nachádza čisto len
+reťazec "emacs" (bez úvodzoviek), tak na výstup napíšte "ano", v opačnom
+prípade "nie" (tiež bez uvodzoviek).
+
+Príklad:
+
+Vstup:
+vim
+
+Výstup:
+nie

@@ -1,0 +1,14 @@
+Úloha: w^R
+
+Na vstupe je práve jeden riadok ukončený koncom riadku. Na ňom je daný jeden
+reťazec dĺžky menšej ako 47, pričom pod reťazcom chápeme ľubovoľnú kombináciu
+vypísateľných znakov (a teda špeciálne aj medzery). Vypíšte ho odzadu (takisto
+na jednom riadku ukončenom koncom riadku).
+
+Príklad:
+
+Vstup:
+a man, a plan, a canal - panama
+
+Výstup:
+amanap - lanac a ,nalp a ,nam a

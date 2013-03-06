@@ -1,0 +1,22 @@
+Úloha: Lorem Ipsum
+
+Niekedy je potrebné vytvoriť nejaký dlhý text, ktorý by približne zodpovedal
+nejakému skutočnému. Predstavme si napríklad testovanie formátovača textu alebo
+html designu. No a v takej chvíli dôjde na rad jednoduchá pomôcka, takzvaný
+Lorem ipsum generátor.
+
+My však nebudeme od vás požadovať až toľko, aby bol schopný
+generovať rôzne dlhé texty, bude nám stačit, ak viete vygenerovať
+nasledujúci text:
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Integer nec odio.
+Praesent libero.
+Sed cursus ante dapibus diam.
+Sed nisi.
+Nulla quis sem at nibh elementum imperdiet.
+Duis sagittis ipsum.
+
+Poznámka: Text musíte vypísať v pôvodnom formátovaní, čiže každú vetu na
+samostatný riadok.
+

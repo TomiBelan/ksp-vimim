@@ -1,0 +1,12 @@
+Úloha: Fibonači
+
+Na vstupe máte dané číslo 1 ≤ N ≤ 41.
+Vašou úlohou je vypísať N-té Fibonačiho číslo, pričom prvé dve sú 1 a 1.
+
+Príklad:
+
+Vstup:
+3
+
+Výstup:
+2

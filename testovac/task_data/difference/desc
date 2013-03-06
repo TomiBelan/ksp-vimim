@@ -1,0 +1,15 @@
+Úloha: Rozdiel medzi číslami
+
+Na prvom riadku sú dve čísla 1 ≤ N, K ≤ 1000. Potom nasleduje riadok s N
+číslami, každé z nich je väčšie ako 0 a menšie ako 10 000 000. Na výstup napíšte
+"\n", ak sa medzi nimi nachádzajú dve s rozdielom práve K. V opačnom prípade na
+výstup vypíšte "%lld". (Všetko bez uvodzoviek.)
+
+Príklad:
+
+Vstup:
+3 5
+5 20 15
+
+Výstup:
+\n

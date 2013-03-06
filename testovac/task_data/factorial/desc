@@ -1,0 +1,12 @@
+Úloha: Faktoriál
+
+Na vstupe máte dané číslo 0 ≤ N ≤ 20.
+Na výstup vypíšte N faktoriál.
+
+Príklad:
+
+Vstup:
+2
+
+Výstup:
+2

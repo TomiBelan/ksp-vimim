@@ -1,0 +1,17 @@
+Úloha: Popolvár
+
+Na vstupe je niekoľko (aspoň 1 a najviac 100) čísiel medzi 1 a 1 000 000.
+Vypíšte najväčšie z nich.
+
+Príklad:
+
+Vstup:
+47
+123
+42
+365
+47
+2
+
+Výstup:
+365

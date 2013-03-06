@@ -1,0 +1,12 @@
+Úloha: Deliteľnosť deviatimi
+
+Na vstupe je jedno číslo s maximálne 1 000 000 ciframi. Ak je deliteľné
+deviatimi, tak vypíšte "True", inak "False".
+
+Príklad:
+
+Vstup:
+1
+
+Výstup:
+False

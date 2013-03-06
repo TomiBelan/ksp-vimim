@@ -27,7 +27,7 @@ from submit import Submit
 
 class Vimim(object):
     SAVE = ['config_app', 'editor_app', 'game_app', 'help_app', 'problem_app',
-            'submit_app']
+            'submit_app', 'win_warn']
 
     def __init__(self, savename=None):
         self.window = draw.Window()
@@ -41,6 +41,7 @@ class Vimim(object):
 
         self.task_names = ['kompilovatelne', 'zero', 'hello', 'stream', 'sucet', 'sum']
 
+        self.win_warn = 12
         self.config_app = Config(self)
         self.editor_app = Editor(self)
         self.game_app = Game(self)
@@ -163,7 +164,7 @@ class Vimim(object):
     def draw_generic_status_bar(self, screen):
         screen.recolor(0, 80, 24, (1, 1, 1), None)
 
-        if self.game_app.x <= 12 and int(time.time() / 0.2) % 2:
+        if self.game_app.x <= self.win_warn and int(time.time() / 0.2) % 2:
             text = u"!!! VYHRÁVAŠ !!!"
             screen.recolor(50, 50+len(text), 24, (0, 1, 0), None)
             screen.write(50, 24, text)

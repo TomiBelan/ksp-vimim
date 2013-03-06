@@ -28,8 +28,8 @@ class Editor(object):
 
         self.price_submit  = 200
         self.price_command = 3
-        self.price_delete  = 3
-        self.price_insert  = 3
+        self.price_delete  = 4
+        self.price_insert  = 2
 
     @property
     def height(self):

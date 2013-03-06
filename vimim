@@ -71,11 +71,6 @@ class Vimim(object):
             else:
                 setattr(self, key, content[key])
 
-        self.darkness = 0
-        self.last_idle = 0
-        self.app = self.editor_app
-        self.editor_app.mode = self.editor_app.command_mode
-
     def save(self, filename=None):
         content = {}
         for key in self.SAVE:

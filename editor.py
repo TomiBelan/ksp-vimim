@@ -311,7 +311,10 @@ class Editor(object):
             self.move_to(0, 0)
         if key == pygame.K_b:
             self.remember()
-            pass # TODO
+            for y in xrange(-10, 11):
+                for x in xrange(-10, 11):
+                    if random.random() < (1 - 0.01*(x*x+y*y*3)**0.9):
+                        self.blank_char(self.y + y, self.x + x)
         if key == pygame.K_z:
             self.remember()
             line = self.normalize_line()

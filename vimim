@@ -17,6 +17,7 @@ from config import Config
 from editor import Editor
 from game import Game
 from help import Help
+from problem import Problem
 from submit import Submit
 
 
@@ -37,6 +38,7 @@ class Vimim(object):
         self.editor_app = Editor(self)
         self.game_app = Game(self)
         self.help_app = Help(self)
+        self.problem_app = Problem(self)
         self.submit_app = Submit(self)
         self.app = self.editor_app
 

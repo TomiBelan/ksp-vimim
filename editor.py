@@ -229,6 +229,9 @@ class Editor(object):
             self.remember()
             line = self.normalize_line()
             self.splice(self.y, 0, len(line), line.lower())
+        if key == pygame.K_z:
+            self.last_command = key
+            self.vimim.problem_app.open()
         if key == pygame.K_x:
             arrow(0, 1)
         if key == pygame.K_c:

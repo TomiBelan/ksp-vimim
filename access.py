@@ -7,38 +7,34 @@ import os
 import sys
 import time
 import json
+import copy
 import random
-from UserDict import DictMixin
 
 
-class Access(DictMixin):
+class Access(dict):
     def __init__(self, pid):
-        self.last_load = 0
+        dict.__init__(self)
         self.path = '/proc/%s/fd/0' % pid
+        self.loaded = {}
+        self.load()
 
     def load(self):
-        if time.time() < self.last_load + 1: return
         with open('state') as f:
-            self.content = json.load(f)
-        self.last_load = time.time()
+            self.loaded = json.load(f)
+        self.clear()
+        self.update(copy.deepcopy(self.loaded))
 
-    def send(self, content):
+    def senddata(self, content):
         with open(self.path, 'w') as f:
             f.write(json.dumps(content))
 
-    def __getitem__(self, key):
-        self.load()
-        return self.content[key]
-
-    def __setitem__(self, key, value):
-        self.send({ key: value })
-
-    def __delitem__(self, key):
-        raise NotImplementedError()
-
-    def keys(self):
-        self.load()
-        return self.content.keys()
+    def save(self):
+        tosend = {}
+        for k in self:
+            if self[k] != self.loaded.get(k):
+                tosend[k] = self[k]
+        self.senddata(tosend)
+        self.loaded = copy.deepcopy(self)
 
 
 def getpid():

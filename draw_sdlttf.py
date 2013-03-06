@@ -1,4 +1,4 @@
-
+-
 from __future__ import division
 
 import sys
@@ -69,6 +69,8 @@ def draw_terminal(window, screensurf, screen):
         for x, char in enumerate(line):
             fg = fgline[x] or (1, 1, 1)
             bg = bgline[x]
+            if fg is not None: fg = tuple(fg)
+            if bg is not None: bg = tuple(bg)
             cid = (char, fg, bg)
             if cid not in window.glyph_cache:
                 fgb = [int(255 * f) for f in fg]

@@ -3,6 +3,8 @@
 import pygame
 from screen import Screen
 
+base_gain = 100
+
 class Config(object):
     SAVE = ['credits', 'prices', 'features', 'used_codes']
 
@@ -90,7 +92,7 @@ class Config(object):
                 if code in self.all_codes and code not in self.used_codes:
                     print "pouzivam", code, time.time()
                     self.used_codes[code] = True
-                    self.credits += 50 * (2**(len(code)-5))
+                    self.credits += base_gain * (2**(len(code)-5))
                 else:
                     self.vimim.bell()
                 self.code_input = None

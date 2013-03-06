@@ -17,7 +17,7 @@ class Game(object):
         self.vimim = vimim
         self.win_item = None
         self.win_time = 0
-        self.price_move = 4
+        self.price_move = 1
         self.ticks_newspeed_choices = [10, 20, 30, 40, 50, 60]
         self.speed_choices = [5, 10, 15, 20, 30, 40, 50]
         self.reset()

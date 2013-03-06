@@ -1,12 +1,12 @@
-Úloha: dva a dva je tri
+Úloha: dva krát dva je tri
 
-Na vstupe sú 2 čísla  -1 000 000 000 ≤ n,m ≤ 1 000 000 000.
-Vypíšte jeden riadok a na ňom číslo jediné číslo n+m.
+Na vstupe sú dve čísla  -1 000 ≤ n,m ≤ 1 000.
+Vypíšte jeden riadok a na ňom číslo jediné číslo n*m.
 
 Príklad:
 
 Vstup:
--2 49
+-42 47
 
 Výstup:
-47
+-1974

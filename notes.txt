@@ -2,12 +2,6 @@
 Co zostava vymysliet:
 - ulohy
 
-Nahodne TODO:
-- logovanie
-
-Minihra TODO:
-- zmeny rychlosti
-
 Zoznam balancovacich konstant:
 - ceny za features
 - ceny za keypressy v roznych modoch

@@ -88,7 +88,7 @@ class Config(object):
             elif event.unicode == u'\n':
                 code = self.code_input.lower()
                 if code in self.all_codes and code not in self.used_codes:
-                    print "pouzivam", code
+                    print "pouzivam", code, time.time()
                     self.used_codes[code] = True
                     self.credits += 50 * (2**(len(code)-5))
                 else:

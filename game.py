@@ -10,13 +10,16 @@ STONE_CHANCE = 0.6
 FORCE = 3
 
 class Game(object):
-    SAVE = ['enemies', 'columns', 'x', 'y', 'ticks', 'speed', 'price_move']
+    SAVE = ['enemies', 'columns', 'x', 'y', 'ticks', 'speed', 'price_move',
+        'ticks_newspeed', 'ticks_newspeed_choices', 'speed_choices']
 
     def __init__(self, vimim):
         self.vimim = vimim
         self.win_item = None
         self.win_time = 0
         self.price_move = 4
+        self.ticks_newspeed_choices = [10, 20, 30, 40, 50, 60]
+        self.speed_choices = [5, 10, 15, 20, 30, 40, 50]
         self.reset()
 
     def reset(self):
@@ -27,6 +30,7 @@ class Game(object):
         self.columns[self.x][self.y] = False
         self.ticks = 0
         self.speed = 10
+        self.ticks_newspeed = 0
 
     def draw(self, ctx):
         screen = Screen()
@@ -74,10 +78,18 @@ class Game(object):
         if self.enemies[self.x][self.y]:
             self.win()
 
+    def choose_speed(self):
+        self.ticks = 0
+        self.speed = (80 if self.vimim.submit_app.task == 0 else random.choice(self.speed_choices))
+        self.ticks_newspeed = 20 * random.choice(self.ticks_newspeed_choices)
+
     def win(self):
         print "winrar!"
         inactive = [fid for (fid, value) in self.vimim.features.iteritems() if not value]
         if inactive:
+            if self.vimim.submit_app.task == 0:
+                for zfid in ('japan', 'double', 'nocursor'):
+                    if zfid in inactive: inactive.remove(zfid)
             fid = random.choice(inactive)
             print "zapinam.odmenu", fid
             self.vimim.features[fid] = True
@@ -126,6 +138,9 @@ class Game(object):
             if self.x > 0: self.x -= 1
             if self.enemies[self.x][self.y]:
                 self.win()
+        self.ticks_newspeed -= 1
+        if self.ticks_newspeed <= 0:
+            self.choose_speed()
 
     def make_column(self):
         return [(random.random() < STONE_CHANCE) for y in xrange(24)]

@@ -75,10 +75,11 @@ class Game(object):
             self.win()
 
     def win(self):
-        print "winrar!"   # DEBUG
+        print "winrar!"
         inactive = [fid for (fid, value) in self.vimim.features.iteritems() if not value]
         if inactive:
             fid = random.choice(inactive)
+            print "zapinam.odmenu", fid
             self.vimim.features[fid] = True
             self.win_item = fid
             self.win_time = time.time() + 8

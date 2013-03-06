@@ -106,6 +106,8 @@ class Vimim(object):
             self.last_idle = now
             self.app.idle()
 
+            sys.stdout.flush()
+
             if self.poll.poll(0):
                 received = os.read(0, 4*1024*1024)
                 print repr(received)

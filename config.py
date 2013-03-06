@@ -4,11 +4,12 @@ import pygame
 from screen import Screen
 
 class Config(object):
-    SAVE = ['credits', 'prices', 'features']
+    SAVE = ['credits', 'prices', 'features', 'used_codes']
 
     def __init__(self, vimim):
         self.vimim = vimim
         self.focus = 0
+        self.code_input = None
 
         self.credits = 100
 
@@ -20,9 +21,14 @@ class Config(object):
         self.features['noresult'] = True
         self.features['parens'] = True
 
+        with open('codes.txt') as f:
+            self.all_codes = dict((c, False) for c in f.read().decode('utf-8').split())
+        self.used_codes = {}
+
     def open(self):
         self.vimim.app = self
         self.focus = 0
+        self.code_input = None
 
     def draw(self, ctx):
         screen = Screen()
@@ -36,17 +42,32 @@ class Config(object):
             screen.recolor(4, 80, i+1, fg, bg)
 
         desc_y = 3 + len(feature_list)
-        selfid = feature_list[self.focus]
-        screen.write(4, desc_y-1, feature_names[selfid] + u':')
-        for i, row in enumerate(feature_descs[selfid].split(u'\n')):
-            screen.write(0, desc_y+i, row)
+        if self.code_input is None:
+            selfid = feature_list[self.focus]
+            screen.write(4, desc_y-1, feature_names[selfid] + u':')
+            for i, row in enumerate(feature_descs[selfid].split(u'\n')):
+                screen.write(0, desc_y+i, row)
+        else:
+            screen.write(4, desc_y+1, u'Kód: ')
+            screen.write(4+5, desc_y+1, self.code_input)
+            screen.recolor(4+5, 4+5+len(self.code_input), desc_y+1, (1, 1, 1), None)
+            screen.recolor(4+5+len(self.code_input), 4+5+len(self.code_input)+1, desc_y+1, (0, 0, 0), (1, 1, 1))
 
         bottom = 23 if self.vimim.have_status_bar else 24
-        screen.write(0, bottom, u'Z: Zapnúť')
-        screen.write(20, bottom, u'V: Vypnúť za %d Kr' % self.prices[selfid])
-        screen.write(60, bottom, u'C: Config zavrieť')
-        for i in xrange(4):
-            screen.recolor(20*i, 20*i+1, bottom, (1, 1, 0), None)
+        if self.code_input is None:
+            screen.write(0, bottom, u'Z:Zapnúť')
+            screen.write(20, bottom, u'V:Vypnúť za %d Kr' % self.prices[selfid])
+            screen.write(40, bottom, u'K:Použiť Kupón')
+            screen.write(60, bottom, u'C:Config zavrieť')
+            for i in xrange(4):
+                screen.recolor(20*i, 20*i+1, bottom, (1, 1, 0), None)
+        else:
+            screen.write(0, bottom, u'Enter:OK')
+            screen.write(20, bottom, u'F10:Storno')
+            screen.write(40, bottom, u'Backspace:Zmaž znak')
+            screen.recolor(0, 5, bottom, (1, 1, 0), None)
+            screen.recolor(20, 23, bottom, (1, 1, 0), None)
+            screen.recolor(40, 49, bottom, (1, 1, 0), None)
 
         if self.vimim.have_status_bar:
             self.vimim.draw_generic_status_bar(screen)
@@ -59,12 +80,36 @@ class Config(object):
             self.vimim.bell()
             return
 
+        if self.code_input is not None:
+            if event.key == pygame.K_F10:
+                self.code_input = None
+            elif event.key == pygame.K_BACKSPACE:
+                self.code_input = self.code_input[:-1]
+            elif event.unicode == u'\n':
+                code = self.code_input.lower()
+                if code in self.all_codes and code not in self.used_codes:
+                    print "pouzivam", code
+                    self.used_codes[code] = True
+                    self.credits += 50 * (2**(len(code)-5))
+                else:
+                    self.vimim.bell()
+                self.code_input = None
+            elif len(event.unicode) == 1 and event.unicode.isalnum() and len(self.code_input) < 20:
+                self.code_input += event.unicode
+            else:
+                self.vimim.bell()
+            return
+
         selfid = feature_list[self.focus]
         if event.key == pygame.K_z and not self.features[selfid]:
+            print "zapinam.manualne", selfid
             self.features[selfid] = True
         elif event.key == pygame.K_v and self.features[selfid]:
             if not self.vimim.pay(self.prices[selfid]): return
+            print "vypinam", selfid
             self.features[selfid] = False
+        elif event.key == pygame.K_k:
+            self.code_input = u''
         elif event.key == pygame.K_UP or event.key == pygame.K_e:
             self.focus -= 1
             if self.focus < 0: self.focus += len(feature_list)
@@ -178,3 +223,16 @@ for f in feature_defs.strip().split(u'\n\n'):
     feature_names[fid] = name
     feature_prices[fid] = int(price)
     feature_descs[fid] = desc
+
+
+if __name__ == '__main__':
+    import random
+    codes = set()
+    chars = 'abcdefghjkmnpqrstuvwxyz23456789'
+    for l in xrange(5, 10):
+        for c in xrange(1000):
+            code = None
+            while code is None or code in codes:
+                code = ''.join(random.choice(chars) for i in xrange(l))
+            print code
+            codes.add(code)

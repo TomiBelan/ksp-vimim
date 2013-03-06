@@ -88,7 +88,7 @@ class Config(object):
             elif event.key == pygame.K_BACKSPACE:
                 self.code_input = self.code_input[:-1]
             elif event.unicode == u'\n':
-                code = self.code_input.lower()
+                code = self.code_input
                 if code in self.all_codes and code not in self.used_codes:
                     print "pouzivam", code, time.time()
                     self.used_codes[code] = True
@@ -97,7 +97,7 @@ class Config(object):
                     self.vimim.bell()
                 self.code_input = None
             elif len(event.unicode) == 1 and event.unicode.isalnum() and len(self.code_input) < 20:
-                self.code_input += event.unicode
+                self.code_input += event.unicode.lower()
             else:
                 self.vimim.bell()
             return

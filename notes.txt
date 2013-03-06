@@ -1,17 +1,19 @@
 
-Co s editorom:
-- riadky mozu byt neobmedzene dlhe, zvysok sa proste nezobrazi
-- kurzor moze ist neobmedzene doprava i guess?
-
 Co zostava vymysliet:
 - ulohy
 
 Nahodne TODO:
 - **kredity**
+- logovanie
+- remote access
 
 Minihra TODO:
 - zmeny rychlosti
-- vyhravanie
+
+Zoznam balancovacich konstant:
+- ceny za features
+- ceny za keypressy v roznych modoch
+- rychlost minihry (override)
 
 
 

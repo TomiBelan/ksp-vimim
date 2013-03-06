@@ -161,6 +161,9 @@ class Vimim(object):
                 for x in xrange(80):
                     screen.chars[y][x] = rot13.get(screen.chars[y][x], screen.chars[y][x])
 
+        if time.time() < self.game_app.win_time:
+            self.game_app.congratulate(screen)
+
         if self.features['large'] and not ingame:
             for y in xrange(25):
                 for x in xrange(80):

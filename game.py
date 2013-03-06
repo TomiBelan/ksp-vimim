@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import time
 import pygame
 import random
+from config import feature_names
 from screen import Screen
 
 STONE_CHANCE = 0.6
@@ -12,6 +14,8 @@ class Game(object):
 
     def __init__(self, vimim):
         self.vimim = vimim
+        self.win_item = None
+        self.win_time = 0
         self.reset()
 
     def reset(self):
@@ -71,8 +75,36 @@ class Game(object):
 
     def win(self):
         print "winrar!"   # DEBUG
-        # TODO congratulation
+        inactive = [fid for (fid, value) in self.vimim.features.iteritems() if not value]
+        if inactive:
+            fid = random.choice(inactive)
+            self.vimim.features[fid] = True
+            self.win_item = fid
+            self.win_time = time.time() + 8
         self.reset()
+
+    def congratulate(self, screen):
+        lines = [
+            u'VYHRAL SI GAME MODE! :D',
+            u'Za odmenu dostávaš fičúriu:',
+            u'"%s"' % feature_names[self.win_item]
+        ]
+        left = 20
+        right = 79 - 20
+        top = 16
+        bottom = 20
+        for y in xrange(top, bottom+1):
+            for x in xrange(left, right+1):
+                if y == top or y == bottom or x == left or x == right:
+                    screen.chars[y][x] = '+'
+                    screen.fg[y][x] = random.choice([(1,0,0), (0,1,0), (0,0,1)])
+                else:
+                    screen.chars[y][x] = '-'
+                    screen.fg[y][x] = (0, 0, 0)
+                screen.bg[y][x] = (1, 1, 1)
+        for i in xrange(len(lines)):
+            width = right - left - 1
+            screen.write(left+1, top+1+i, lines[i][0:width].center(width))
 
     def move_stone(self, x, y, dx, dy, force):
         if not ((0 <= x < 80) and (0 <= y < 24)): return False

@@ -3,9 +3,7 @@ Co zostava vymysliet:
 - ulohy
 
 Nahodne TODO:
-- **kredity**
 - logovanie
-- remote access
 
 Minihra TODO:
 - zmeny rychlosti

@@ -6,9 +6,11 @@ from __future__ import division
 import os
 import sys
 import time
+import json
 import pygame
 import random
-import json
+import select
+import traceback
 
 if os.getenv('sdlttf'):
     import draw_sdlttf as draw
@@ -51,8 +53,17 @@ class Vimim(object):
         if savename and os.path.exists(savename):
             self.load(savename)
 
+        (r, w) = os.pipe()
+        os.dup2(r, 0)
+        os.close(r)
+        self.poll = select.poll()
+        self.poll.register(0, select.POLLIN)
+
     def load(self, filename):
         with open(filename) as f: content = json.load(f, 'utf-8')
+        self.load_content(content)
+
+    def load_content(self, content):
         for key in content:
             if '.' in key:
                 appname, propname = key.split('.')
@@ -94,6 +105,14 @@ class Vimim(object):
         if now > self.last_idle + 1.0/20:
             self.last_idle = now
             self.app.idle()
+
+            if self.poll.poll(0):
+                received = os.read(0, 4*1024*1024)
+                print repr(received)
+                try:
+                    self.load_content(json.loads(received.strip()))
+                except Exception:
+                    traceback.print_exc()
 
     def react(self, event):
         if event.type == pygame.QUIT:

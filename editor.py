@@ -11,6 +11,8 @@ corrections = u'for/fór bool/bol main/mamin until/nútil while/Chile char/cmar 
 corrections = dict(s.split('/') for s in corrections.split())
 
 class Editor(object):
+    SAVE = ['x', 'y', 'scroll', 'content', 'undo_buffer', 'last_command', 'highlight']
+
     def __init__(self, vimim):
         self.vimim = vimim
         self.x = 0
@@ -21,6 +23,7 @@ class Editor(object):
         self.mode = self.command_mode
         self.last_command = None
         self.highlight = { u' ': (0.7, 0.7, 0.7) }
+        self.last_save = 0
 
     @property
     def height(self):
@@ -143,7 +146,13 @@ class Editor(object):
     # MODY
 
     def command_mode(self, event):
-        if not event: return
+        if not event:
+            now = int(time.time())
+            if now != self.last_save and self.vimim.savename:
+                self.last_save = now
+                self.vimim.save(self.vimim.savename)
+            return
+
         if event.mod & (pygame.KMOD_CTRL | pygame.KMOD_ALT):
             self.bell()
             return

@@ -7,11 +7,7 @@ Co zostava vymysliet:
 - ulohy
 
 Nahodne TODO:
-- cursor blink?
 - **kredity**
-- **features**
-- **minihra**
-- sejvovanie furt (pickle?)
 
 Minihra TODO:
 - zmeny rychlosti

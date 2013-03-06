@@ -4,6 +4,8 @@ import pygame
 from screen import Screen
 
 class Config(object):
+    SAVE = ['features']
+
     def __init__(self, vimim):
         self.vimim = vimim
         self.focus = 0

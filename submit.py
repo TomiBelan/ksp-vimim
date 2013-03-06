@@ -7,6 +7,8 @@ import pygame
 from screen import Screen
 
 class Submit(object):
+    SAVE = ['task']
+
     def __init__(self, vimim):
         self.vimim = vimim
         self.task = 0

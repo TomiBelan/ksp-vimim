@@ -4,6 +4,8 @@ import pygame
 from screen import Screen
 
 class Help(object):
+    SAVE = []
+
     def __init__(self, vimim):
         self.vimim = vimim
 

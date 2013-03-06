@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import time
 import pygame
 import random
 from screen import Screen
@@ -9,6 +8,8 @@ STONE_CHANCE = 0.6
 FORCE = 3
 
 class Game(object):
+    SAVE = ['enemies', 'columns', 'x', 'y', 'ticks', 'speed']
+
     def __init__(self, vimim):
         self.vimim = vimim
         self.reset()

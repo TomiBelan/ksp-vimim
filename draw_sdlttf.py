@@ -75,7 +75,8 @@ def draw_terminal(window, screensurf, screen):
                 else:
                     window.glyph_cache[cid] = window.terminal_font.render(char, True, fgb)
             screensurf.blit(window.glyph_cache[cid], (sx, y * line_height))
-            sx += window.glyph_cache[cid].get_size()[0]
+            #sx += window.glyph_cache[cid].get_size()[0]
+            sx += 9
 
     fps = window.terminal_font.render('%.3ffps' % window.clock.get_fps(), True, (255, 255, 255))
     screensurf.blit(fps, (0, window.h - fps.get_size()[1]))

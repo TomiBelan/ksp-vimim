@@ -91,8 +91,8 @@ class Vimim(object):
         return content
 
     def run(self):
-        w = 800   # TODO
-        h = 600
+        w = 720
+        h = 425
         self.window.run(w, h, 'vimim', bool(os.getenv('FULLSCREEN')))
 
     def start(self):

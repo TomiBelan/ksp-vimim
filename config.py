@@ -4,11 +4,15 @@ import pygame
 from screen import Screen
 
 class Config(object):
-    SAVE = ['features']
+    SAVE = ['credits', 'prices', 'features']
 
     def __init__(self, vimim):
         self.vimim = vimim
         self.focus = 0
+
+        self.credits = 100
+
+        self.prices = feature_prices.copy()
 
         self.features = dict((fid, False) for fid in feature_list)
         self.features['highlight'] = True
@@ -39,7 +43,7 @@ class Config(object):
 
         bottom = 23 if self.vimim.have_status_bar else 24
         screen.write(0, bottom, u'Z: Zapnúť')
-        screen.write(20, bottom, u'V: Vypnúť')   # TODO cena
+        screen.write(20, bottom, u'V: Vypnúť za %d Kr' % self.prices[selfid])
         screen.write(60, bottom, u'C: Config zavrieť')
         for i in xrange(4):
             screen.recolor(20*i, 20*i+1, bottom, (1, 1, 0), None)
@@ -59,7 +63,7 @@ class Config(object):
         if event.key == pygame.K_z and not self.features[selfid]:
             self.features[selfid] = True
         elif event.key == pygame.K_v and self.features[selfid]:
-            # TODO pay
+            if not self.vimim.pay(self.prices[selfid]): return
             self.features[selfid] = False
         elif event.key == pygame.K_UP or event.key == pygame.K_e:
             self.focus -= 1
@@ -80,36 +84,43 @@ class Config(object):
 feature_defs = u'''
 
 highlight
+900
 Farebné zvýrazňovanie
     Mýlia sa vám 0 s O, 1 s l, a podobne? Iné editory vám možno ponúkajú
     zvýrazňovanie čísel atď. inou farbou, ale Vimim dokáže zvýrazňovať
     nielen čísla, ale úplne všetko.
 
 large
+600
 Pomoc pre zrakovo postihnutých
     Nevidíte na obrazovku? Nevadí. Vimim môže písmená zobrazovať väčšie.
 
 japan
+1500
 Japonské písanie textu
     Písanie znakov japonským spôsobom. Samozrejme, funguje to aj s latinkou.
 
 green
+3000
 Pokojná zelená
     Ste v neustálom strese? Vimim vám ponúka ukľudňujúce zelené pozadie.
     Ale aby ste neboli kľudní až príliš a nezaspali pri kódení, kompenzuje
     to akčným červeným písmom.
 
 parens
+2000
 Dopĺňanie zátvoriek a úvodzoviek
     Automaticky doplní zatvárajúce párové znaky - zátvorky, úvodzovky a
     podobne.
 
 noresult
+500
 Šetrič nervov
     Tlie vám program? Vytáča vás kompilátor? Stále hádže WA? Šetrite si vaše
     nervy a zapnite si túto fičúriu.
 
 rot13
+1300
 ROT13 šifrovanie
     Striehnu vám za ramenom mraky ľudí, pripravení odkukať vám vo chvíľke
     nepozornosti vaše heslá, alebo (glg!) vaše intelektuálne vlastníctvo?
@@ -117,34 +128,41 @@ ROT13 šifrovanie
     plány! (Pozor, písmená s diakritikou zostanú nezašifrované.)
 
 nostatus
+1700
 Plná obrazovka
     Status bar sa vypne, aby ste sa mohli plne sústrediť na editovaný text a
     videli z neho čo najviac.
 
 horse
+800
 Šachový kôň
     Príležitosť vyskúšať nový, rýchlejší spôsob pohybu.
 
 180
+1800
 Iný pohľad na vec
     Nie a nie nájsť ten bug? Možno pomôže pozrieť sa na to z iného uhla.
 
 double
+600
 Zdvojnásobená efektivita
     Chcete za rovnaký čas napísať dvakrát toľko kódu? Vimim vám pomôže
     dosiahnuť tento cieľ a získať si tým obdiv všetkých okolo vás.
 
 spellcheck
+2300
 Kontrola pravopisu
     Nejde ti spisovná slovenčina? Neboj sa, ak spravíš nejaký preklep alebo
     chybu, Vimim ju za teba opraví.
 
 ide
+3000
 Integrované debugovanie
     Ak váš program alebo kompilátor vyhodí chybu, Vimim vám ukáže, kde je,
     priamo v editore.
 
 nocursor
+1100
 Kompaktný kurzor
     Nechcete, aby bol kurzor obdĺžnik? Niektoré editory podporujú aj kurzory
     v tvare úsečky, ale iba Vimim ponúka skutočnú kompaktnosť!
@@ -153,8 +171,10 @@ Kompaktný kurzor
 feature_list = []
 feature_names = {}
 feature_descs = {}
+feature_prices = {}
 for f in feature_defs.strip().split(u'\n\n'):
-    fid, name, desc = f.split(u'\n', 2)
+    fid, price, name, desc = f.split(u'\n', 3)
     feature_list.append(fid)
     feature_names[fid] = name
+    feature_prices[fid] = int(price)
     feature_descs[fid] = desc

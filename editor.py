@@ -11,7 +11,8 @@ corrections = u'for/fór bool/bol main/mamin until/nútil while/Chile char/cmar 
 corrections = dict(s.split('/') for s in corrections.split())
 
 class Editor(object):
-    SAVE = ['x', 'y', 'scroll', 'content', 'undo_buffer', 'last_command', 'highlight']
+    SAVE = ['x', 'y', 'scroll', 'content', 'undo_buffer', 'last_command', 'highlight',
+            'price_command', 'price_submit', 'price_delete', 'price_insert']
 
     def __init__(self, vimim):
         self.vimim = vimim
@@ -24,6 +25,11 @@ class Editor(object):
         self.last_command = None
         self.highlight = { u' ': (0.7, 0.7, 0.7) }
         self.last_save = 0
+
+        self.price_submit  = 200
+        self.price_command = 3
+        self.price_delete  = 3
+        self.price_insert  = 3
 
     @property
     def height(self):
@@ -61,9 +67,6 @@ class Editor(object):
 
     def bell(self):
         self.vimim.bell()
-
-    def pay(self):
-        return self.vimim.pay(3)
 
 
     # ZAKLADNE UPRAVY
@@ -159,8 +162,12 @@ class Editor(object):
         if not (pygame.K_a <= event.key <= pygame.K_z):
             self.bell()
             return
-        if event.key not in (pygame.K_c, pygame.K_p):   # free
-            if not self.pay(): return
+        if event.key in (pygame.K_c, pygame.K_p):
+            pass   # free
+        elif event.key == pygame.K_s:
+            if not self.vimim.pay(self.price_submit): return
+        else:
+            if not self.vimim.pay(self.price_command): return
         key = event.key
         if key == pygame.K_r:
             key = self.last_command
@@ -274,7 +281,7 @@ class Editor(object):
         if event.key not in [ord(c) for c in 'eropsvbzcnm']:
             self.bell()
             return
-        if not self.pay(): return
+        if not self.vimim.pay(self.price_delete): return
         key = event.key
 
         if key == pygame.K_e:
@@ -341,13 +348,13 @@ class Editor(object):
                 self.mode = self.command_mode
                 return
             elif code == u'\n':
-                if not self.pay(): return
+                if not self.vimim.pay(self.price_insert): return
                 if self.vimim.features['japan']:
                     self.move_to(self.x - 1, 0)
                 else:
                     self.newline()
             elif code and ord(code[0]) >= 32:
-                if not self.pay(): return
+                if not self.vimim.pay(self.price_insert): return
                 if self.vimim.features['japan']:
                     self.splice(self.y, self.x, self.x + len(code), code)
                     self.move_by(0, 1)
@@ -373,7 +380,7 @@ class Editor(object):
             # free
             self.mode = self.command_mode
         elif len(event.unicode) == 1 and ord(event.unicode) >= 32:
-            if not self.pay(): return
+            if not self.vimim.pay(self.price_insert): return
             self.splice(self.y, self.x, self.x + 1, event.unicode)
         else:
             self.bell()

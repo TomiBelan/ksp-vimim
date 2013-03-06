@@ -103,7 +103,9 @@ class Vimim(object):
             self.app.keydown(self.normalize_key(event))
 
     def pay(self, price):
-        return True   # TODO
+        if self.config_app.credits < price: return False
+        self.config_app.credits -= price
+        return True
 
     _keys_table = {
         pygame.K_LEFT:      u'\u2190',
@@ -146,10 +148,13 @@ class Vimim(object):
         screen.recolor(0, 80, 24, (1, 1, 1), None)
 
         if self.game_app.x <= 12 and int(time.time() / 0.2) % 2:
-            screen.recolor(50, 80, 24, (0, 1, 0), None)
-            screen.write(50, 24, u"!!! VYHRÁVAŠ !!!")
+            text = u"!!! VYHRÁVAŠ !!!"
+            screen.recolor(50, 50+len(text), 24, (0, 1, 0), None)
+            screen.write(50, 24, text)
 
-        # TODO kredity
+        screen.write(70, 24, u"%d Kr" % self.config_app.credits)
+        if self.config_app.credits < 50:
+            screen.recolor(70, 80, 24, (1, 0, 0), None)
 
     def postprocess_screen(self, screen, ingame=False):
         letters = 'abcdefghijklmnopqrstuvwxyz'

@@ -10,12 +10,13 @@ STONE_CHANCE = 0.6
 FORCE = 3
 
 class Game(object):
-    SAVE = ['enemies', 'columns', 'x', 'y', 'ticks', 'speed']
+    SAVE = ['enemies', 'columns', 'x', 'y', 'ticks', 'speed', 'price_move']
 
     def __init__(self, vimim):
         self.vimim = vimim
         self.win_item = None
         self.win_time = 0
+        self.price_move = 4
         self.reset()
 
     def reset(self):
@@ -66,7 +67,7 @@ class Game(object):
             self.vimim.bell()
 
     def move(self, dx, dy):
-        self.vimim.pay(4)   # TODO kalibrovat
+        if not self.vimim.pay(self.price_move): return
         if not self.move_stone(self.x+dx, self.y+dy, dx, dy, FORCE): return
         self.x += dx
         self.y += dy

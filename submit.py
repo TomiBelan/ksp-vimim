@@ -7,11 +7,12 @@ import pygame
 from screen import Screen
 
 class Submit(object):
-    SAVE = ['task']
+    SAVE = ['task', 'ok_credit_gain']
 
     def __init__(self, vimim):
         self.vimim = vimim
         self.task = 0
+        self.ok_credit_gain = 700
         self.process = None
         self.outfile = tempfile.mkstemp()[1]
         for name in self.vimim.task_names:
@@ -47,7 +48,9 @@ class Submit(object):
         # print 'h', self.process.returncode
         if self.process.poll() is None: return
         # print self.process.returncode
-        if self.process.returncode == 0: self.task += 1
+        if self.process.returncode == 0:
+            self.vimim.config_app.credits += self.ok_credit_gain
+            self.task += 1
         self.process = None
         with open(self.outfile) as f: output = f.read().decode('utf-8')
         # print self.outfile

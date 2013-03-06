@@ -53,4 +53,9 @@ class Submit(object):
         if self.vimim.features['noresult']:
             self.vimim.app = self.vimim.editor_app
             return
+        if self.vimim.features['ide']:
+            for i, line in enumerate(output.strip().split('\n')):
+                self.vimim.editor_app.content.insert(self.vimim.editor_app.y+1+i, line)
+            self.vimim.app = self.vimim.editor_app
+            return
         self.vimim.problem_app.open(output)

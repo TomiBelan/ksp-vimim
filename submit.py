@@ -47,7 +47,10 @@ class Submit(object):
         # print self.process.returncode
         if self.process.returncode == 0: self.task += 1
         self.process = None
-        with open(self.outfile) as f: output = f.read()
+        with open(self.outfile) as f: output = f.read().decode('utf-8')
         # print self.outfile
         # print output   # DEBUG
-        self.vimim.app = self.vimim.editor_app
+        if self.vimim.features['noresult']:
+            self.vimim.app = self.vimim.editor_app
+            return
+        self.vimim.problem_app.open(output)

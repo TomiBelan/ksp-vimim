@@ -17,6 +17,7 @@ from config import Config
 from editor import Editor
 from game import Game
 from help import Help
+from submit import Submit
 
 
 class Vimim(object):
@@ -30,10 +31,13 @@ class Vimim(object):
         self.last_idle = 0
         self.darkness = 0
 
+        self.task_names = ['kompilovatelne']
+
         self.config_app = Config(self)
         self.editor_app = Editor(self)
         self.game_app = Game(self)
         self.help_app = Help(self)
+        self.submit_app = Submit(self)
         self.app = self.editor_app
 
     def run(self):

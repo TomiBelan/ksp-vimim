@@ -206,6 +206,9 @@ class Editor(object):
             self.vimim.app = self.vimim.help_app
         if key == pygame.K_a:
             arrow(-1, 0)
+        if key == pygame.K_s:
+            self.last_command = key
+            self.vimim.submit_app.open()
         if key == pygame.K_d:
             while self.content and not self.content[-1].rstrip(): self.content.pop()
             self.move_to(0, len(self.content))
@@ -230,7 +233,7 @@ class Editor(object):
             arrow(0, 1)
         if key == pygame.K_c:
             self.last_command = key
-            self.vimim.app = self.vimim.config_app
+            self.vimim.config_app.open()
         if key == pygame.K_v:
             self.last_command = key
             self.remember()

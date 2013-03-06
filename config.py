@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import time
 import pygame
-import random
 from screen import Screen
 
 class Config(object):
@@ -15,6 +13,10 @@ class Config(object):
         self.features['large'] = True
         self.features['noresult'] = True
         self.features['parens'] = True
+
+    def open(self):
+        self.vimim.app = self
+        self.focus = 0
 
     def draw(self, ctx):
         screen = Screen()

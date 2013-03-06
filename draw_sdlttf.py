@@ -58,7 +58,7 @@ def draw_terminal(window, screensurf, screen):
     screensurf.fill([int(255 * f) for f in screen.mainbg])
 
     if not hasattr(window, 'terminal_font'):
-        window.terminal_font = pygame.font.SysFont('DejaVu Sans Mono', 14)
+        window.terminal_font = pygame.font.Font('fonts/DejaVuSansMono.ttf', 14)
         window.glyph_cache = {}
     line_height = window.terminal_font.get_linesize()
 

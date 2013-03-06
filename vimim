@@ -39,7 +39,7 @@ class Vimim(object):
         self.last_idle = 0
         self.darkness = 0
 
-        self.task_names = ['kompilovatelne']
+        self.task_names = ['kompilovatelne', 'zero', 'hello', 'stream', 'sucet', 'sum']
 
         self.config_app = Config(self)
         self.editor_app = Editor(self)

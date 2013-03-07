@@ -36,7 +36,7 @@ rm -rf sandbox/* || die "Can't clean sandbox"
 
 # copy test data
 cp test.sh sandbox/ || die "Can't copy test data"
-cp task_data/${TASKNAME#*_}/* sandbox/ || die "Can't copy test data"
+cp task_data/$TASKNAME/* sandbox/ || die "Can't copy test data"
 
 # compile
 cd sandbox || die

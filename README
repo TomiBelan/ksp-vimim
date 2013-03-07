@@ -1,0 +1,40 @@
+
+Vimim
+by Tomi Belan
+
+
+Ako spustiť:
+
+    ./vimim state
+
+"state" je meno súboru, kde sa to bude sejvovať. Keď dáte iný súbor, bude to
+"nová hra". V adresári "vysledky" sú state súbory družiniek z momentu, keď sa
+skončilo. (Keď nedáte žiadne meno súboru, sejvovanie nebude.)
+
+Aby to fungovalo, treba Python 2 a Pygame. Cairo backend navyše potrebuje
+Pycairo a Numpy. SDL_ttf backendu stačí Pygame, viď nižšie.
+
+Kupóny nájdete v súbore codes.txt. Ťažbu si len predstavujte.
+
+
+
+Pokročilejšie spúšťanie:
+
+SDL_ttf backend (niekedy rýchlejší, niekedy nie) sa zapína s:
+
+    sdlttf=1 ./vimim state
+
+Na entoch sa to spúšťalo v ssh v screene takto:
+
+    DISPLAY=:0 sdlttf=1 ./vimim state | tee -a log
+
+Zhrnutie stavu vyzeralo takto:
+
+    grep -o 'app.credits.........' state; grep -o 'features.: {[^}]*' state; grep -o 'app.task.....' state
+
+Na bežiaci proces sa pripája takto:
+
+    python2
+    import access; e = access.connect(); e['config_app.credits'] = 12345; e.save()
+
+Ale pozor, bug: loadovanie dát funguje len, keď sa sejv volá presne "state".

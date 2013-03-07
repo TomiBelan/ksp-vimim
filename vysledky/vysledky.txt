@@ -1,0 +1,5 @@
+ID  DRUZINKA  OK     KR
+s1  oranzovi   9   2129
+s2  modri     11   1340
+s3  zeleni    10   3338
+s4  cerveni   11  11814

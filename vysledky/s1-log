@@ -1,0 +1,461 @@
+pouzivam q5jmys 1362578036.81
+'{"config_app.prices": {"parens": 400, "horse": 160, "spellcheck": 460, "nocursor": 220, "double": 120, "nostatus": 340, "rot13": 260, "large": 120, "180": 360, "green": 600, "highlight": 180, "japan": 300, "noresult": 100, "ide": 600}}'
+winrar!
+zapinam.odmenu spellcheck
+pouzivam eexpy 1362578195.57
+pouzivam e3n4tz 1362578223.98
+vypinam large
+winrar!
+zapinam.odmenu nostatus
+vypinam nostatus
+pouzivam bncrwc 1362578792.5
+pouzivam 4fxzs4 1362578806.21
+pouzivam ns4xw 1362578838.79
+pouzivam a8b3r8 1362578965.85
+pouzivam qm3p7gq 1362578991.74
+winrar!
+zapinam.odmenu horse
+['./testovac/testovac.sh', 'kompilovatelne', 'cpp', '/tmp/tmpB5kgCT']
+['./testovac/testovac.sh', 'kompilovatelne', 'cpp', '/tmp/tmphZngBn']
+---------- begin submit log (status 1) ----------
+src.cpp:1:2: error: stray '\303' in program
+src.cpp:1:2: error: stray '\263' in program
+src.cpp:1:2: error: 'f' does not name a type
+Can't compile file.
+---------- end submit log ----------
+pouzivam garhs 1362579469.98
+pouzivam bbckuy 1362579489.67
+pouzivam anuw83 1362579507.59
+pouzivam zsdtw 1362579517.15
+winrar!
+zapinam.odmenu rot13
+vypinam rot13
+winrar!
+zapinam.odmenu nostatus
+vypinam nostatus
+pouzivam t3pt5 1362579983.93
+pouzivam c2bf4ug 1362580006.08
+pouzivam mznm82 1362580369.0
+pouzivam 2gbjy 1362580389.5
+winrar!
+zapinam.odmenu rot13
+vypinam rot13
+vypinam spellcheck
+pouzivam 8k36e 1362580438.81
+pouzivam 3xuc3 1362580457.24
+pouzivam 2ha5ef 1362580469.87
+pouzivam gbb4kd 1362580482.27
+['./testovac/testovac.sh', 'kompilovatelne', 'cpp', '/tmp/tmphZngBn']
+---------- begin submit log (status 0) ----------
+Hura, skompilovalo sa OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu nocursor
+winrar!
+zapinam.odmenu nostatus
+vypinam nocursor
+winrar!
+zapinam.odmenu nocursor
+vypinam nocursor
+winrar!
+zapinam.odmenu ide
+vypinam nostatus
+pouzivam rk72sq6 1362580977.09
+pouzivam tdkwn5 1362580996.94
+winrar!
+zapinam.odmenu japan
+vypinam japan
+pouzivam 2ma5m 1362581049.23
+pouzivam bt9ez 1362581066.21
+winrar!
+zapinam.odmenu nocursor
+vypinam horse
+vypinam nocursor
+pouzivam 27yu9 1362581331.82
+pouzivam heb9s 1362581345.1
+pouzivam fp4q28 1362581359.85
+winrar!
+zapinam.odmenu green
+'{"win_warn": 20}'
+winrar!
+zapinam.odmenu japan
+pouzivam p62nu 1362581582.61
+pouzivam 6s9d2pfv2 1362581602.99
+vypinam japan
+vypinam ide
+winrar!
+zapinam.odmenu nostatus
+winrar!
+zapinam.odmenu horse
+winrar!
+zapinam.odmenu ide
+vypinam nostatus
+vypinam horse
+pouzivam hrw5t 1362582044.28
+pouzivam rnyda2eg 1362582084.04
+winrar!
+zapinam.odmenu rot13
+vypinam rot13
+'{}'
+winrar!
+zapinam.odmenu large
+'{"config_app.features": {"parens": true, "horse": false, "spellcheck": false, "nocursor": false, "double": false, "nostatus": false, "rot13": false, "large": false, "180": false, "green": true, "highlight": true, "japan": false, "noresult": true, "ide": true}}'
+'{"config_app.prices": {"parens": 600, "nocursor": 330, "nostatus": 510, "japan": 450, "noresult": 150, "horse": 240, "spellcheck": 690, "double": 180, "rot13": 390, "large": 180, "180": 540, "green": 900, "highlight": 270, "ide": 900}}'
+winrar!
+zapinam.odmenu double
+pouzivam tbprxc 1362582648.2
+pouzivam 6p2xr6 1362582665.11
+pouzivam 2kgzv 1362582680.36
+pouzivam quc6w2 1362582698.57
+winrar!
+zapinam.odmenu horse
+vypinam double
+vypinam horse
+winrar!
+zapinam.odmenu double
+vypinam double
+winrar!
+zapinam.odmenu nocursor
+pouzivam htdj8 1362583101.05
+pouzivam gzqq76 1362583121.2
+pouzivam 5bvwaa3w6 1362583146.6
+winrar!
+zapinam.odmenu large
+vypinam nocursor
+vypinam large
+['./testovac/testovac.sh', 'zero', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+'{"game_app.speed_choices": [10, 20, 30, 40, 60, 80]}'
+winrar!
+zapinam.odmenu horse
+vypinam horse
+vypinam parens
+['./testovac/testovac.sh', 'hello', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu double
+vypinam double
+'{"config_app.prices": {"parens": 2000, "nocursor": 1100, "nostatus": 1700, "japan": 1500, "noresult": 500, "horse": 800, "spellcheck": 2300, "double": 600, "rot13": 1300, "large": 600, "180": 1800, "green": 3000, "highlight": 900, "ide": 3000}}'
+pouzivam 96hns9a8e 1362584685.73
+pouzivam ekujv 1362584718.28
+'{"config_app.prices": {"parens": 2000, "nocursor": 1100, "nostatus": 1700, "japan": 1500, "noresult": 500, "horse": 800, "spellcheck": 1300, "double": 600, "rot13": 1300, "large": 600, "180": 1800, "green": 800, "highlight": 900, "ide": 3000}}'
+winrar!
+zapinam.odmenu horse
+vypinam horse
+pouzivam 8cfkems95 1362584772.75
+pouzivam uzvax4u9e 1362584792.01
+pouzivam pauds5r9 1362584806.4
+winrar!
+zapinam.odmenu horse
+vypinam horse
+'{"game_app.price_move": 0}'
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu spellcheck
+vypinam spellcheck
+'{"config_app.features": {"parens": false, "nocursor": false, "nostatus": false, "japan": false, "noresult": false, "horse": false, "spellcheck": false, "double": false, "rot13": false, "large": false, "180": false, "green": false, "highlight": false, "ide": false}}'
+['./testovac/testovac.sh', 'sucet', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+'{"config_app.prices": {"parens": 1200, "nocursor": 660, "nostatus": 1020, "japan": 900, "noresult": 300, "horse": 480, "spellcheck": 780, "double": 360, "rot13": 780, "large": 360, "180": 1080, "green": 480, "highlight": 540, "ide": 1800}}'
+['./testovac/testovac.sh', 'sum', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+src.cpp: In function 'int main()':
+src.cpp:4:7: warning: unused variable 'y' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'factorial', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+src.cpp: In function 'int main()':
+src.cpp:4:7: warning: variable 'y' set but not used [-Wunused-but-set-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 8
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 07.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 08.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu highlight
+winrar!
+zapinam.odmenu parens
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:15:1: warning: 'char* gets(char*)' is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+src.cpp:15:7: warning: 'char* gets(char*)' is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+/tmp/ccRtZSyN.o: In function `main':
+src.cpp:(.text+0x14): warning: the `gets' function is dangerous and should not be used.
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+pouzivam d6w87bb 1362588625.4
+pouzivam egzht 1362588639.37
+pouzivam tafj9kw 1362588655.8
+pouzivam 7c2y2w9 1362588665.48
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpPdzqke']
+---------- begin submit log (status 0) ----------
+src.cpp: In function 'int main()':
+src.cpp:15:1: warning: 'char* gets(char*)' is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+src.cpp:15:7: warning: 'char* gets(char*)' is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+/tmp/ccMho1ky.o: In function `main':
+src.cpp:(.text+0x14): warning: the `gets' function is dangerous and should not be used.
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 8
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+vypinam parens

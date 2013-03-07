@@ -1,0 +1,865 @@
+winrar!
+zapinam.odmenu nostatus
+'{"config_app.prices": {"parens": 400, "horse": 160, "spellcheck": 460, "nocursor": 220, "double": 120, "nostatus": 340, "rot13": 260, "large": 120, "180": 360, "green": 600, "highlight": 180, "japan": 300, "noresult": 100, "ide": 600}}'
+pouzivam u5sxr 1362578235.14
+pouzivam 2hf44ce 1362578295.04
+vypinam nostatus
+winrar!
+zapinam.odmenu horse
+vypinam large
+pouzivam bherh4 1362578455.35
+winrar!
+zapinam.odmenu large
+vypinam horse
+pouzivam f8ht58 1362578638.99
+pouzivam uzy3v3 1362579023.22
+pouzivam u9bwhs 1362579050.54
+zapinam.manualne 180
+winrar!
+zapinam.odmenu nostatus
+vypinam nostatus
+pouzivam adtza 1362579191.61
+pouzivam amtav 1362579209.48
+vypinam 180
+pouzivam gxrkfh 1362579301.76
+pouzivam dhmdnm 1362579317.14
+winrar!
+zapinam.odmenu horse
+vypinam horse
+pouzivam rxe2ek8x 1362579966.85
+winrar!
+zapinam.odmenu green
+vypinam large
+vypinam green
+pouzivam j4zbjw8ft 1362580305.02
+['./testovac/testovac.sh', 'kompilovatelne', 'cpp', '/tmp/tmplr7bGa']
+---------- begin submit log (status 0) ----------
+Hura, skompilovalo sa OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu double
+vypinam double
+vypinam noresult
+vypinam parens
+vypinam highlight
+winrar!
+zapinam.odmenu parens
+winrar!
+zapinam.odmenu green
+winrar!
+zapinam.odmenu large
+vypinam large
+vypinam green
+pouzivam 5nunnwmuw 1362580756.51
+vypinam parens
+winrar!
+zapinam.odmenu 180
+vypinam 180
+winrar!
+zapinam.odmenu nocursor
+winrar!
+zapinam.odmenu green
+vypinam nocursor
+winrar!
+zapinam.odmenu 180
+['./testovac/testovac.sh', 'zero', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+vypinam 180
+vypinam green
+winrar!
+zapinam.odmenu highlight
+winrar!
+zapinam.odmenu noresult
+winrar!
+zapinam.odmenu nocursor
+pouzivam b4b3ze 1362581166.21
+vypinam nocursor
+winrar!
+zapinam.odmenu rot13
+pouzivam xuhfcua7 1362581296.95
+vypinam rot13
+['./testovac/testovac.sh', 'hello', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+'{"win_warn": 20}'
+pouzivam 49bpg 1362581790.53
+pouzivam d2m7bp 1362581808.08
+pouzivam tgbycy95a 1362581989.14
+winrar!
+zapinam.odmenu parens
+winrar!
+zapinam.odmenu horse
+vypinam horse
+'{}'
+winrar!
+zapinam.odmenu nocursor
+vypinam nocursor
+pouzivam ue2n927xe 1362582479.56
+winrar!
+zapinam.odmenu rot13
+vypinam rot13
+'{"config_app.prices": {"parens": 600, "nocursor": 330, "nostatus": 510, "japan": 450, "noresult": 150, "horse": 240, "spellcheck": 690, "double": 180, "rot13": 390, "large": 180, "180": 540, "green": 900, "highlight": 270, "ide": 900}}'
+winrar!
+zapinam.odmenu nocursor
+vypinam nocursor
+winrar!
+zapinam.odmenu nostatus
+vypinam nostatus
+pouzivam zkvmpxxcn 1362582843.05
+winrar!
+zapinam.odmenu ide
+vypinam parens
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:1:2: error: invalid preprocessing directive #nnclude
+src.cpp:2:1: error: 'usng' does not name a type
+src.cpp: In function 'int main()':
+src.cpp:5:3: error: 'cout' was not declared in this scope
+src.cpp:9:7: error: 'endl' was not declared in this scope
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:2:1: error: 'usig' does not name a type
+src.cpp: In function 'int main()':
+src.cpp:5:3: error: 'cout' was not declared in this scope
+src.cpp:5:3: note: suggested alternative:
+In file included from src.cpp:1:0:
+/usr/lib/gcc/i686-pc-linux-gnu/4.7.2/../../../../include/c++/4.7.2/iostream:62:18: note:   'std::cout'
+src.cpp:9:7: error: 'endl' was not declared in this scope
+src.cpp:9:7: note: suggested alternative:
+In file included from /usr/lib/gcc/i686-pc-linux-gnu/4.7.2/../../../../include/c++/4.7.2/iostream:40:0,
+                 from src.cpp:1:
+/usr/lib/gcc/i686-pc-linux-gnu/4.7.2/../../../../include/c++/4.7.2/ostream:562:5: note:   'std::endl'
+Can't compile file.
+---------- end submit log ----------
+winrar!
+zapinam.odmenu spellcheck
+winrar!
+zapinam.odmenu rot13
+pouzivam bjqaf93 1362583045.19
+vypinam rot13
+pouzivam bz675jn 1362583182.45
+pouzivam q22rbyj 1362583197.79
+vypinam ide
+winrar!
+zapinam.odmenu large
+pouzivam y6ndzw 1362583264.07
+winrar!
+zapinam.odmenu nocursor
+winrar!
+zapinam.odmenu horse
+pouzivam g7wxvwyh 1362583305.71
+vypinam noresult
+pouzivam 4yp7g 1362583337.47
+pouzivam rgbhth 1362583353.82
+winrar!
+zapinam.odmenu noresult
+pouzivam f6r8569kx 1362583378.84
+vypinam noresult
+'{"game_app.speed_choices": [10, 20, 30, 40, 60, 80]}'
+pouzivam x63tkh 1362583431.99
+pouzivam 3xwzp 1362583445.42
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:2:1: error: 'usig' does not name a type
+src.cpp: In function 'int main()':
+src.cpp:5:3: error: 'cout' was not declared in this scope
+src.cpp:5:3: note: suggested alternative:
+In file included from src.cpp:1:0:
+/usr/lib/gcc/i686-pc-linux-gnu/4.7.2/../../../../include/c++/4.7.2/iostream:62:18: note:   'std::cout'
+src.cpp:9:7: error: 'endl' was not declared in this scope
+src.cpp:9:7: note: suggested alternative:
+In file included from /usr/lib/gcc/i686-pc-linux-gnu/4.7.2/../../../../include/c++/4.7.2/iostream:40:0,
+                 from src.cpp:1:
+/usr/lib/gcc/i686-pc-linux-gnu/4.7.2/../../../../include/c++/4.7.2/ostream:562:5: note:   'std::endl'
+Can't compile file.
+---------- end submit log ----------
+vypinam nocursor
+vypinam horse
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu double
+vypinam double
+['./testovac/testovac.sh', 'sucet', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:6:2: error: expected primary-expression before ')' token
+src.cpp:6:2: error: expected ';' before ')' token
+src.cpp:6:11: error: expected primary-expression before '>' token
+src.cpp:6:12: error: 'j' was not declared in this scope
+src.cpp:6:20: error: expected ';' before 'gnol'
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'sucet', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:6:2: error: expected primary-expression before ')' token
+src.cpp:6:2: error: expected ';' before ')' token
+src.cpp:6:11: error: expected primary-expression before '>' token
+src.cpp:6:12: error: 'j' was not declared in this scope
+src.cpp:6:20: error: expected ';' before 'gnol'
+src.cpp:9:13: error: expected primary-expression before '/' token
+src.cpp:10:1: error: expected primary-expression before 'long'
+src.cpp:10:1: error: expected ';' before 'long'
+src.cpp:11:6: error: 'N' was not declared in this scope
+src.cpp:11:9: error: 'M' was not declared in this scope
+src.cpp:12:7: error: 'n' was not declared in this scope
+src.cpp:12:9: error: 'm' was not declared in this scope
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'sucet', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:11:6: error: 'N' was not declared in this scope
+src.cpp:11:9: error: 'M' was not declared in this scope
+Can't compile file.
+---------- end submit log ----------
+winrar!
+zapinam.odmenu noresult
+vypinam noresult
+vypinam large
+['./testovac/testovac.sh', 'sucet', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'sum', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 7
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu green
+'{"config_app.prices": {"parens": 2000, "nocursor": 1100, "nostatus": 1700, "japan": 1500, "noresult": 500, "horse": 800, "spellcheck": 2300, "double": 600, "rot13": 1300, "large": 600, "180": 1800, "green": 3000, "highlight": 900, "ide": 3000}}'
+['./testovac/testovac.sh', 'factorial', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:14:1: error: stray '\303' in program
+src.cpp:14:1: error: stray '\263' in program
+src.cpp: In function 'int main()':
+src.cpp:14:1: error: 'f' was not declared in this scope
+src.cpp:14:4: error: expected ';' before 'r'
+src.cpp:13:11: warning: unused variable 'res' [-Wunused-variable]
+Can't compile file.
+---------- end submit log ----------
+winrar!
+zapinam.odmenu horse
+vypinam horse
+pouzivam kbm93 1362584142.82
+pouzivam j6twjkf 1362584182.03
+winrar!
+zapinam.odmenu noresult
+vypinam noresult
+pouzivam 5gxju 1362584381.87
+pouzivam 8pgqsa 1362584393.24
+pouzivam k9h2b 1362584403.53
+winrar!
+zapinam.odmenu double
+pouzivam pjc5n3 1362584421.85
+pouzivam cdhr6u 1362584433.49
+pouzivam nyp55f8 1362584446.55
+pouzivam e3g3us 1362584464.45
+pouzivam 7yus7p 1362584476.68
+pouzivam 6hbu2 1362584485.03
+vypinam double
+['./testovac/testovac.sh', 'factorial', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:17:14: warning: unused variable 'res' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 7
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Time: 23
+ExitCode: 0
+Errors: EXC(signal 11)
+Errors: EXC(signal 11)
+RUNTIME EXCEPTION
+FAILED (retval 1)
+
+---------- end submit log ----------
+winrar!
+zapinam.odmenu ide
+pouzivam vtp3gp5nu 1362584631.22
+['./testovac/testovac.sh', 'factorial', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+src.cpp: In function 'int main()':
+src.cpp:18:14: warning: unused variable 'res' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:5:22: warning: character constant too long for its type [enabled by default]
+src.cpp:6:41: warning: multi-character character constant [-Wmultichar]
+src.cpp:9:19: error: invalid suffix "in" on floating constant
+src.cpp:16:19: error: invalid suffix "in" on floating constant
+src.cpp:23:19: error: invalid suffix "in" on floating constant
+src.cpp:30:19: error: invalid suffix "in" on floating constant
+src.cpp:37:19: error: invalid suffix "in" on floating constant
+src.cpp: In function 'long long int f(long long int)':
+src.cpp:5:1: error: 'src' was not declared in this scope
+src.cpp:5:8: error: found ':' in nested-name-specifier, expected '::'
+src.cpp:5:5: error: 'cpp' has not been declared
+src.cpp:5:13: error: expected ';' before 'function'
+src.cpp: In function 'int main()':
+src.cpp:59:14: warning: unused variable 'res' [-Wunused-variable]
+Can't compile file.
+---------- end submit log ----------
+pouzivam xgaruvyty 1362584712.22
+'{"config_app.prices": {"parens": 2000, "nocursor": 1100, "nostatus": 1700, "japan": 1500, "noresult": 500, "horse": 800, "spellcheck": 1300, "double": 600, "rot13": 1300, "large": 600, "180": 1800, "green": 800, "highlight": 900, "ide": 3000}}'
+vypinam ide
+winrar!
+zapinam.odmenu ide
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:74:14: warning: unused variable 'res' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+winrar!
+zapinam.odmenu horse
+pouzivam m3hbw4 1362585185.36
+pouzivam aaqf78 1362585199.51
+'{"game_app.price_move": 0}'
+winrar!
+zapinam.odmenu parens
+winrar!
+zapinam.odmenu nostatus
+winrar!
+zapinam.odmenu japan
+winrar!
+zapinam.odmenu noresult
+'{"config_app.features": {"parens": false, "nocursor": false, "nostatus": false, "japan": false, "noresult": false, "horse": false, "spellcheck": false, "double": false, "rot13": false, "large": false, "180": false, "green": false, "highlight": false, "ide": false}}'
+pouzivam sdc6xt3 1362585734.92
+pouzivam pznby 1362585973.84
+pouzivam gqaq342 1362586079.72
+pouzivam 46hu4euu8 1362586091.32
+'{"config_app.prices": {"parens": 1200, "nocursor": 660, "nostatus": 1020, "japan": 900, "noresult": 300, "horse": 480, "spellcheck": 780, "double": 360, "rot13": 780, "large": 360, "180": 1080, "green": 480, "highlight": 540, "ide": 1800}}'
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:8:25: error: expected initializer before 'long'
+src.cpp:9:21: error: 'cin' does not name a type
+src.cpp:10:22: error: 'mem' does not name a type
+src.cpp:11:42: error: 'cout' does not name a type
+src.cpp:13:25: error: expected unqualified-id before 'return'
+src.cpp:13:35: error: expected declaration before '}' token
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp:9:25: error: expected initializer before 'long'
+src.cpp:10:21: error: 'cin' does not name a type
+src.cpp:11:22: error: 'mem' does not name a type
+src.cpp:12:42: error: 'cout' does not name a type
+src.cpp:14:25: error: expected unqualified-id before 'return'
+src.cpp:14:35: error: expected declaration before '}' token
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 07.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 08.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+pouzivam va54y6ut 1362586838.19
+pouzivam xnjrgkuaa 1362587382.79
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 7
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Time: 1910
+ExitCode: 0
+Errors: TLE
+Errors: TLE
+TIME LIMIT EXCEEDED
+FAILED (retval 1)
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:13:63: error: expected ';' before ')' token
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+pouzivam d3gmgtrv 1362587795.46
+winrar!
+zapinam.odmenu highlight
+winrar!
+zapinam.odmenu horse
+vypinam horse
+['./testovac/testovac.sh', 'srnka', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:25:35: error: expected '}' at end of input
+Can't compile file.
+---------- end submit log ----------
+pouzivam w3cdbp4n 1362588484.65
+['./testovac/testovac.sh', 'srnka', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 8
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 7
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 07.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 08.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 09.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 10.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 11.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 12.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 13.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'popolvar', 'cpp', '/tmp/tmprNue33']
+---------- begin submit log (status 0) ----------
+src.cpp: In function 'int main()':
+src.cpp:14:29: warning: format '%d' expects argument of type 'int*', but argument 2 has type 'long int*' [-Wformat]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu nocursor
+pouzivam rrwp2dg 1362589128.76

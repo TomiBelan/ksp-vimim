@@ -1,0 +1,777 @@
+'{"config_app.prices": {"parens": 400, "horse": 160, "spellcheck": 460, "nocursor": 220, "double": 120, "nostatus": 340, "rot13": 260, "large": 120, "180": 360, "green": 600, "highlight": 180, "japan": 300, "noresult": 100, "ide": 600}}'
+winrar!
+zapinam.odmenu nostatus
+pouzivam xseet 1362578327.62
+pouzivam 3smrd2 1362578460.47
+['./testovac/testovac.sh', 'kompilovatelne', 'cpp', '/tmp/tmp_VKV1l']
+---------- begin submit log (status 1) ----------
+src.cpp:1:1: error: 'abc' does not name a type
+Can't compile file.
+---------- end submit log ----------
+winrar!
+zapinam.odmenu rot13
+winrar!
+zapinam.odmenu 180
+winrar!
+zapinam.odmenu green
+winrar!
+zapinam.odmenu spellcheck
+pouzivam vmsfb 1362580099.72
+winrar!
+zapinam.odmenu 180
+pouzivam jfxub2 1362580595.79
+winrar!
+zapinam.odmenu horse
+pouzivam yrxa5a 1362581023.26
+vypinam nostatus
+pouzivam 3erktf 1362581075.01
+winrar!
+zapinam.odmenu nostatus
+pouzivam 2dt4v 1362581419.27
+pouzivam prteu 1362581431.01
+pouzivam anzvp 1362581438.02
+pouzivam yumvgt 1362581467.77
+vypinam nostatus
+pouzivam 5jp8s 1362581529.11
+vypinam horse
+'{"win_warn": 20}'
+pouzivam tdqsh 1362581634.63
+pouzivam vu6kjw7 1362581751.28
+['./testovac/testovac.sh', 'kompilovatelne', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Hura, skompilovalo sa OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu nocursor
+vypinam noresult
+vypinam parens
+pouzivam ujr58d5sb 1362582070.59
+vypinam nocursor
+vypinam 180
+winrar!
+zapinam.odmenu 180
+vypinam 180
+vypinam spellcheck
+winrar!
+zapinam.odmenu rot13
+vypinam rot13
+winrar!
+zapinam.odmenu double
+pouzivam fdddq 1362582284.86
+pouzivam q259b5pgu 1362582303.49
+vypinam double
+winrar!
+zapinam.odmenu nostatus
+vypinam nostatus
+'{"config_app.features": {"parens": false, "horse": false, "spellcheck": false, "nocursor": false, "double": false, "nostatus": false, "rot13": false, "large": false, "180": false, "green": true, "highlight": true, "japan": false, "noresult": false, "ide": false}}'
+['./testovac/testovac.sh', 'zero', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu large
+vypinam large
+zapinam.manualne large
+vypinam large
+['./testovac/testovac.sh', 'hello', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+'{"config_app.prices": {"parens": 600, "nocursor": 330, "nostatus": 510, "japan": 450, "noresult": 150, "horse": 240, "spellcheck": 690, "double": 180, "rot13": 390, "large": 180, "180": 540, "green": 900, "highlight": 270, "ide": 900}}'
+winrar!
+zapinam.odmenu large
+vypinam large
+winrar!
+zapinam.odmenu japan
+vypinam japan
+winrar!
+zapinam.odmenu large
+winrar!
+zapinam.odmenu double
+vypinam double
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+winrar!
+zapinam.odmenu 180
+['./testovac/testovac.sh', 'stream', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 6
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+vypinam 180
+winrar!
+zapinam.odmenu parens
+pouzivam taw2rdnp 1362583151.03
+vypinam parens
+winrar!
+zapinam.odmenu 180
+['./testovac/testovac.sh', 'sucet', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 9
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+vypinam 180
+winrar!
+zapinam.odmenu nocursor
+pouzivam g649sg 1362583330.68
+vypinam nocursor
+'{"game_app.speed_choices": [10, 20, 30, 40, 60, 80]}'
+pouzivam 6xaamrpv 1362583432.28
+['./testovac/testovac.sh', 'sum', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+src.cpp: In function 'int main()':
+src.cpp:6:28: warning: unused variable 'b' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 6
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu nostatus
+vypinam nostatus
+['./testovac/testovac.sh', 'factorial', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'factorial', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu nocursor
+vypinam nocursor
+winrar!
+zapinam.odmenu parens
+winrar!
+zapinam.odmenu spellcheck
+'{"config_app.prices": {"parens": 2000, "nocursor": 1100, "nostatus": 1700, "japan": 1500, "noresult": 500, "horse": 800, "spellcheck": 2300, "double": 600, "rot13": 1300, "large": 600, "180": 1800, "green": 3000, "highlight": 900, "ide": 3000}}'
+winrar!
+zapinam.odmenu japan
+pouzivam b6hvu 1362584152.19
+pouzivam mh3p48 1362584175.87
+pouzivam 34r6ukbx2 1362584200.43
+vypinam japan
+pouzivam 9jqh75 1362584351.9
+winrar!
+zapinam.odmenu 180
+pouzivam 7rxaj 1362584369.8
+pouzivam pbpbw 1362584388.13
+pouzivam 9scbrjmv 1362584412.85
+pouzivam urcrz 1362584423.95
+pouzivam g6p96 1362584439.73
+pouzivam h9hcg 1362584449.16
+pouzivam 5nb6h 1362584463.71
+pouzivam muzng 1362584475.32
+pouzivam ay9he 1362584509.5
+vypinam spellcheck
+winrar!
+zapinam.odmenu spellcheck
+pouzivam 3crb6 1362584654.26
+'{"config_app.prices": {"parens": 2000, "nocursor": 1100, "nostatus": 1700, "japan": 1500, "noresult": 500, "horse": 800, "spellcheck": 1300, "double": 600, "rot13": 1300, "large": 600, "180": 1800, "green": 800, "highlight": 900, "ide": 3000}}'
+winrar!
+zapinam.odmenu horse
+pouzivam r89dp 1362584804.2
+winrar!
+zapinam.odmenu double
+pouzivam cxpatrnh 1362585066.66
+winrar!
+zapinam.odmenu nostatus
+vypinam double
+winrar!
+zapinam.odmenu nocursor
+'{"game_app.price_move": 0}'
+pouzivam 2gbfr96 1362585301.78
+winrar!
+zapinam.odmenu ide
+winrar!
+zapinam.odmenu double
+winrar!
+zapinam.odmenu rot13
+winrar!
+zapinam.odmenu noresult
+'{"config_app.features": {"parens": false, "nocursor": false, "nostatus": false, "japan": false, "noresult": false, "horse": false, "spellcheck": false, "double": false, "rot13": false, "large": false, "180": false, "green": false, "highlight": false, "ide": false}}'
+winrar!
+zapinam.odmenu spellcheck
+pouzivam 43em7hc7u 1362585718.35
+vypinam spellcheck
+winrar!
+zapinam.odmenu rot13
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:9:7: error: 'N' was not declared in this scope
+src.cpp: At global scope:
+src.cpp:15:5: error: 'cout' does not name a type
+src.cpp:15:19: error: expected declaration before '}' token
+Can't compile file.
+---------- end submit log ----------
+winrar!
+zapinam.odmenu horse
+winrar!
+zapinam.odmenu spellcheck
+'{"config_app.prices": {"parens": 1200, "nocursor": 660, "nostatus": 1020, "japan": 900, "noresult": 300, "horse": 480, "spellcheck": 780, "double": 360, "rot13": 780, "large": 360, "180": 1080, "green": 480, "highlight": 540, "ide": 1800}}'
+'{"config_app.features": {"parens": true, "nocursor": false, "nostatus": true, "japan": false, "noresult": false, "horse": false, "spellcheck": false, "double": false, "rot13": false, "large": false, "180": true, "green": true, "highlight": false, "ide": false}}'
+pouzivam 3h3hsgn 1362586822.42
+pouzivam k7tjyfx 1362586844.74
+vypinam 180
+pouzivam shudnkb 1362586966.98
+pouzivam ff27h 1362586978.19
+pouzivam mw8qp 1362586989.4
+pouzivam kh328 1362586999.82
+pouzivam y7szbzw 1362587018.66
+vypinam nostatus
+pouzivam 83c4y8rj 1362587130.22
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp: In function 'int main()':
+src.cpp:5:18: error: expected unqualified-id before '>>' token
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'fibonacci', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 6
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 07.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 08.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+winrar!
+zapinam.odmenu large
+pouzivam y7a6pgfj 1362587999.32
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:18:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+src.cpp:19:25: error: expected ']' before ')' token
+src.cpp:19:26: error: expected ';' before ']' token
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:18:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+pouzivam 3bvkcre 1362588141.08
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:18:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:18:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 5
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 6
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+pouzivam jne7jmdsz 1362588335.19
+['./testovac/testovac.sh', 'reverse', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:18:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+['./testovac/testovac.sh', 'srnka', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:22:1: error: 'strong' was not declared in this scope
+src.cpp:22:8: error: expected ';' before 's'
+src.cpp:23:1: error: 'con' was not declared in this scope
+src.cpp:23:6: error: 's' was not declared in this scope
+src.cpp:24:16: error: 'ff' was not declared in this scope
+src.cpp:24:17: error: expected ';' before 'cout'
+src.cpp:24:34: error: 'else' without a previous 'if'
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Can't compile file.
+---------- end submit log ----------
+['./testovac/testovac.sh', 'srnka', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+['./testovac/testovac.sh', 'srnka', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 1) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 8
+Time: 0
+ExitCode: 0
+Errors: OK
+WRONG ANSWER
+
+---------- end submit log ----------
+vypinam large
+pouzivam qqzayqrqj 1362588981.3
+winrar!
+zapinam.odmenu 180
+['./testovac/testovac.sh', 'srnka', 'cpp', '/tmp/tmpAErOBY']
+---------- begin submit log (status 0) ----------
+src.cpp:6:11: warning: "/*" within comment [-Wcomment]
+src.cpp: In function 'int main()':
+src.cpp:4:19: warning: unused variable 'N' [-Wunused-variable]
+Testing task...
+Using parameters: -a0 -f -m25600 -t2000
+********* Testing 01.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 02.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 03.in ********
+running...
+Wall: 2
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 04.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 05.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 06.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 07.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 08.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 09.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 10.in ********
+running...
+Wall: 3
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 11.in ********
+running...
+Wall: 0
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 12.in ********
+running...
+Wall: 1
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+********* Testing 13.in ********
+running...
+Wall: 4
+Time: 0
+ExitCode: 0
+Errors: OK
+OK
+
+EVERYTHING OK
+---------- end submit log ----------
+pouzivam 5sk9emkea 1362589117.91
